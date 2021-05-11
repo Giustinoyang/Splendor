@@ -15,7 +15,7 @@
                 <ul class="pure-menu-list">
                     <li class="pure-menu-item"><a href="introduction" class="pure-menu-link">Introduction</a></li>
                     |
-                    <li class="pure-menu-item"><a href="#" class="pure-menu-link">Areas</a></li>
+                    <li class="pure-menu-item"><a href="Area" class="pure-menu-link">Areas</a></li>
                     |
                     <li class="pure-menu-item"><a href="#" class="pure-menu-link">Services</a></li>
                     |

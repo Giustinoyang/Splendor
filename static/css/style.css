@@ -44,3 +44,37 @@
     letter-spacing: 0.05em;
     opacity: 0.8;
 }
+
+.area-table {
+    /* Remove spacing between table cells (from Normalize.css) */
+    border-collapse: collapse;
+    border-spacing: 0;
+    empty-cells: show;
+    border: 1px solid #cbcbcb;
+}
+
+.area-table caption {
+    color: #000;
+    font: italic 85%/1 arial, sans-serif;
+    padding: 1em 0;
+    text-align: center;
+}
+
+.area-table td{
+    border-left: 1px solid #cbcbcb;/*  inner column border */
+    border-width: 0 0 0 1px;
+    font-size: inherit;
+    margin: 0;
+    overflow: visible; /*to make ths where the title is really long work*/
+    padding: 0.5em 15em; /* cell padding */
+    table-layout:fixed
+}
+
+td:first-child {
+    background-color: yellow;
+    padding: 0.5em 5em;
+}
+
+/*.areapara{
+
+}*/
