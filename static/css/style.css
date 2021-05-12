@@ -20,11 +20,12 @@
 .splash {
     /* absolute center .splash within .splash-container */
     width: 80%;
-    height: 50%;
+    height: 80%;
     margin: auto;
     position: absolute;
-    top: 100px; left: 0; bottom: 0; right: 0;
+    top: 0px; left: 0; bottom: 0; right: 0;
     text-align: center;
+    line-height: 5em;
 }
 
 /* This is the main heading that appears on the blue section */
@@ -33,7 +34,7 @@
     font-weight: bold;
     color: white;
     border: 3px solid white;
-    padding: 1em 1.6em;
+    padding: 1em 40% 1em 40%;
     font-weight: 100;
     border-radius: 5px;
     line-height: 1em;
@@ -75,6 +76,9 @@ td:first-child {
     padding: 0.5em 5em;
 }
 
-/*.areapara{
-
-}*/
+.maintext{
+    color:white;
+    font-size: 12px;
+    font-weight:lighter;
+    text-align: center;
+}
