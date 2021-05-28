@@ -1,12 +1,15 @@
 <template>
   <main class="container">
     <header>
-      <h1>Splendor</h1>
-      <h4>And it's a wonderful company for you</h4>
-      <img src="~/static/owen.png" alt="Bot ADS" />
+      <h1>About what?</h1>
+      <h4>About this website.</h4>
+      <img
+        src="https://pbs.twimg.com/profile_images/1090208956440633345/Okg4uYbh_400x400.jpg"
+        alt="Nuxt Logo"
+      />
     </header>
     <section>
-      <h2>What's News</h2>
+      <h2>Another lorem ipsum</h2>
       <p>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
         tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
@@ -21,7 +24,13 @@
 </template>
 
 <script>
-export default {}
+export default {
+  head() {
+    return {
+      title: 'A WebSite - About',
+    }
+  },
+}
 </script>
 
 <style scoped>

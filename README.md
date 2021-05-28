@@ -1,4 +1,4 @@
-# Splendor
+# Nuxt Website
 
 ## Build Setup
 
