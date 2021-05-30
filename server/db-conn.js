@@ -325,22 +325,23 @@ async function insertFakeData() {
   await Network.addPeople(AdamChlipala);
   await AI.addPeople(FredoDurand);
   await Graphics.addPeople(FredoDurand);
-  await area1.addPeople(WilliamFreeman);
-  await area1.addPeople(people1.id);
-  await area1.addPeople(people1.id);
-  await area1.addPeople(people1.id);
-  await area1.addPeople(people1.id);
-  await area1.addPeople(people1.id);
-  await area1.addPeople(people1.id);
-  await area1.addPeople(people1.id);
-  await area1.addPeople(people1.id);
-  await area1.addPeople(people1.id);
-  await area1.addPeople(people1.id);
-  await area1.addPeople(people1.id);
-  await area1.addPeople(people1.id);
-  await area1.addPeople(people1.id);
-  await area1.addPeople(people1.id);
-  await area1.addPeople(people1.id);
+  await Graphics.addPeople(WilliamFreeman);
+  await AI.addPeople(WilliamFreeman);
+  await AI.addPeople(TommiJaakkola);
+  await AI.addPeople(StefanieJegelka);
+  await AI.addPeople(AleksanderMądry);
+  await Graphics.addPeople(AleksanderMądry);
+  await Graphics.addPeople(WojciechMatusik);
+  await AI.addPeople(DanielaRus);
+  await Robitics.addPeople(DanielaRus);
+  await BigData.addPeople(JoachimBuhmann);
+  await Security.addPeople(MengjiaYan);
+  await BigData.addPeople(AlanWillsky);
+  await AI.addPeople(RussTedrake);
+  await AI.addPeople(PeterSzolovits);
+  await AI.addPeople(GeraldSussman);
+  await Security.addPeople(RonaldRivest);
+  await Graphics.addPeople(JonathanRaganKelley);
 
 
 
