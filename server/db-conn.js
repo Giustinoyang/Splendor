@@ -433,6 +433,9 @@ async function insertFakeData() {
   await BigData.addProduct(Risk_and_Causes_of_Infection);
   await MohammadAlizadeh.addProduct(Risk_and_Causes_of_Infection);
   await ReginaBarzilay.addProduct(Risk_and_Causes_of_Infection);
+  await JoachimBuhmann.addProduct(Risk_and_Causes_of_Infection);
+  await AlanWillsky.addProduct(Risk_and_Causes_of_Infection);
+  
   
 
 
@@ -444,97 +447,271 @@ async function insertFakeData() {
     case: 'Transitioning machine learning models across electronic health record (EHR) versions can be improved by mapping different EHR encodings to a common vocabulary.',
   })
   await BigData.addService(Predicting_Adverse_Events);
-  await ReginaBarzilay.addService(Predicting_Adverse_Events);
+  await AlanWillsky.addService(Predicting_Adverse_Events);
   await TamaraBroderick.addService(Predicting_Adverse_Events);
+  await JoachimBuhmann.addService(Predicting_Adverse_Events);
+
+
+  const Privacy_Preserving_Framework = await Product.create({
+    title: 'Privacy Preserving Framework',
+    overview: 'This framework that enforces privacy transparently enabling different kinds of machine learning to be developed that are automatically privacy preserving.',
+    details: 'Our approach is to develop a general framework that enforces privacy internally enabling different kinds of machine learning to be developed that are automatically privacy preserving. This decoupling of privacy preservation and machine learning based analysis is important because it reduces the additional burden of privacy protection. Our goal is to protect the data from analysts who want to analyze it for various purposes while still enabling its utility.',
+  })
+  await Security.addProduct(Privacy_Preserving_Framework);
+  await RonaldRivest.addProduct(Privacy_Preserving_Framework);
+  await MengjiaYan.addProduct(Privacy_Preserving_Framework);
+
+
+  const supervised_machine_learning_techniques = await Service.create({
+    title: 'supervised machine learning techniques',
+    overview: 'We aim to utilize supervised machine learning techniques on tracking data',
+    details: 'Supervised learning is a machine learning task that infers a function from labeled training data. The training data includes a set of training examples. In supervised learning, each instance is composed of an input object (usually a vector) and a desired output value (also called a supervised signal).',
+    case: 'We utilize supervised machine learning techniques on player tracking data from the game of basketball to automatically discover relationships between player movement and offensive success.',
+  })
+
+  await area1.addService(supervised_machine_learning_techniques);
+  await AleksanderMądry.addService(supervised_machine_learning_techniques);
+  await GeraldSussman.addService(supervised_machine_learning_techniques);
+  await PeterSzolovits.addService(supervised_machine_learning_techniques);
+
+
+  const Secure_Networks = await Service.create({
+    title: 'Secure Networks',
+    overview: 'Focusing and helping to maintain network security.',
+    details: 'Our reporter offers a series of recommendations for government or companies to develop a coherent cybersecurity plan that coordinates efforts across departments, encourages investment, and removes parts of key infrastructure ',
+    case: 'Report warns of hacking risk to electric grid, oil pipelines, and other critical infrastructure',
+  })
+
+  await Security.addService(Secure_Networks);
+  await RonaldRivest.addService(Secure_Networks);
+  await MengjiaYan.addService(Secure_Networks);
+  await MohammadAlizadeh.addService(Secure_Networks);
 
 
 
 
-  const product1 = await Product.create({
-    title: 'product1',
-    overview: 'prduct1 overview',
-    details: 'product1 details',
+
+  const An_Interlock_for_Self_Driving_Cars = await Product.create({
+    title: 'An Interlock for Self Driving Cars',
+    overview: 'This project is designing a new architecture for a highly dependable self-driving car.',
+    details: 'Our project takes a new approach that equips self-driving cars with tools for perception and situational awareness that are just as sophisticated as those of the main controller. We do this by means of certified control. Certified control is a new architecture for autonomous cars that offers the possibility of a small, verifiable trusted base without preventing the use of complex machine-learning algorithms for perception and control.',
   })
  
-  await area1.addProduct(product1.id);
-  await area1.addService(service1.id);
-  await people1.addProduct(product1.id);
-  await people1.addService(service1.id);
+  await AI.addProduct(An_Interlock_for_Self_Driving_Cars);
+  await GeraldSussman.addProduct(An_Interlock_for_Self_Driving_Cars);
+  await PeterSzolovits.addProduct(An_Interlock_for_Self_Driving_Cars);
+  await RussTedrake.addProduct(An_Interlock_for_Self_Driving_Cars);
+ 
 
-  const service1 = await Service.create({
-    title: 'service1',
-    overview: 'service1 overview',
-    details: 'service1 details',
-    case: 'service1 case',
+  const Muscle_Signals_And_Robots = await Product.create({
+    title: 'Muscle Signals And Robots',
+    overview: 'Robot assistants that can help you lift objects by mirroring motions and following nonverbal commands.',
+    details: 'this project looks at the person`s muscle activity to inform the robot about how it should move to best assist the person while they collaborate.  By using the muscles already involved in performing the task, the robot could almost become like an extension of yourself that can be controlled intuitively.',
+  })
+  await area1.addProduct(Muscle_Signals_And_Robots);
+  await RussTedrake.addProduct(Muscle_Signals_And_Robots);
+  await PeterSzolovits.addProduct(Muscle_Signals_And_Robots);
+  await DanielaRus.addProduct(Muscle_Signals_And_Robots);
+ 
+
+
+
+  const Geometric_Data_Processing = await Service.create({
+    title: 'Geometric Data Processing',
+    overview: 'Our group studies geometric problems in computer graphics, computer vision',
+    details: 'Geometry is a central component of algorithms for computer-aided design, medical imaging, 3D animation, and robotics.  While early work in computational geometry provided basic methods to store and process shapes, modern geometry research builds on these foundations by assembling unstructured, noisy, and even probabilistic signals about shape into robust models capturing semantic, geometric, and topological features. ',
+    case: 'A central theme in our research involves algorithms and applications for optimal transport (OT).  OT lifts classical geometry to probability distributions, providing a means for geometric computation on uncertain data. ',
+  })
+  await Graphics.addService(Geometric_Data_Processing);
+  await JonathanRaganKelley.addService(Geometric_Data_Processing);
+  await WojciechMatusik.addService(Geometric_Data_Processing);
+  await FredoDurand.addService(Geometric_Data_Processing);
+
+  const Flash_for_Indoor_Portraits = await Product.create({
+    title: 'Flash for Indoor Portraits',
+    overview: 'To achieve high-quality photo lighting in challenging environments.',
+    details: 'our prototype camera dynamically reconstructs a 3D scene model and directs a motor-controlled flash head at nearby walls and ceilings for soft indirect illumination.We first identify criteria for evaluating flash directions, based on established photography literature, and relate these criteria to the color and geometry of a scene. We augment a camera with servomotors rotate the flash head, and additional sensors (a fisheye and 3D sensors) to gather information about potential bounce surfaces.',
+  })
+  await Graphics.addProduct(Flash_for_Indoor_Portraits);
+  await WilliamFreeman.addProduct(Flash_for_Indoor_Portraits);
+  await WojciechMatusik.addProduct(Flash_for_Indoor_Portraits);
+  await JonathanRaganKelley.addProduct(Flash_for_Indoor_Portraits);
+
+
+  const Artificial_Codriver = await Product.create({
+    title: 'Artificial Co-driver',
+    overview: 'By observing driver in real road situations, we learn a computer assistant that can make driving easier, safer and more enjoyable.',
+    details: 'Self-driving cars have obtained a lot of attention in recent years from both research and industry. On the way to fully autonomous vehicles we aim to support a human driver by providing a computer assistant. We want to advance existing systems to another level by providing natural and targeted interaction based on the events both in and outside the car. We use a dataset from recording of real driving in combination with machine learning techniques in order to predict driver`s intentions. This will help the artificial co-pilot in the car to determine the most efficient solution for given road situation.',
+  })
+  await AI.addProduct(Artificial_Codriver);
+  await JacobAndreas.addProduct(Artificial_Codriver);
+  await TommiJaakkola.addProduct(Artificial_Codriver);
+  await StefanieJegelka.addProduct(Artificial_Codriver);
+
+
+  const Deep_Learning_for_3D_Data = await Product.create({
+    title: 'Deep Learning for 3D Data',
+    overview: 'Developing state-of-the-art deep learning algorithms for analyzing and modeling 3D geometry.',
+    details: 'we are developing deep learning tools designed from the ground up for 3D data, specifically point clouds, triangulated surfaces, and CAD models; these modalities undoubtedly are used widely in applications from design to manufacture to robotic navigation using e.g. LiDAR. Rather than shoehorning existing techniques for images or unstructured problems, we start from well-studied constructions from differential geometry and digital geometry processing, which provide well-posed replacements for operations like convolution in the presence of curvature.',
+  })
+  await AI.addProduct(Deep_Learning_for_3D_Data);
+  await StefanieJegelka.addProduct(Deep_Learning_for_3D_Data);
+  await DanielaRus.addProduct(Deep_Learning_for_3D_Data);
+  await GeraldSussman.addProduct(Deep_Learning_for_3D_Data);
+
+
+  const Data_Civilizer = await Product.create({
+    title: 'Data_Civilizer',
+    overview: 'This project is for data discovery.',
+    details: 'As part of Data Civilizer we are designing abstractions and building tools and systems to help people with their data-related tasks, from discovering, to cleaning, to transforming it. The aim is to shape the data in a way that is easy to analyzer---for example to fit a model or fill in a report.',
+  })
+  await BigData.addProduct(Data_Civilizer);
+  await AlanWillsky.addProduct(Data_Civilizer);
+  await JoachimBuhmann.addProduct(Data_Civilizer);
+  await TamaraBroderick.addProduct(Data_Civilizer);
+
+
+
+  const Encrypted_Data = await Service.create({
+    title: 'Encrypted Data',
+    overview: 'We are investigating the limits of computing on encrypted data, with a focus on the private outsourcing of computation over sensitive data.',
+    details: 'There number of classical and more modern approaches to the the private outsourcing of data, including grabled circuits, multi-party computation, fully-homomorphic and functional encryption, and obfuscation. We are exploring new techniques to push the boundaries of what is feasible in this direction.',
+    case: 'Commonly used in hospital. Hospitals have vast amounts of patient data that would be useful to third-party researchers, but cannot freely share the data due to a myriad of privacy issues. We try to protect the information of the hospital.',
   })
 
+  await Security.addService(Encrypted_Data);
+  await RonaldRivest.addService(Encrypted_Data);
+  await MengjiaYan.addService(Encrypted_Data);
+  await HariBalakrishnan.addService(Encrypted_Data);
 
-  const product1 = await Product.create({
-    title: 'product1',
-    overview: 'prduct1 overview',
-    details: 'product1 details',
+
+  
+  const complex_machine_learning_models = await Product.create({
+    title: 'complex machine learning models',
+    overview: 'Our goal is to develop methods that can "explain" the behavior of complex machine learning models, without restricting their power. We seek explanations that are simple, robust and grounded in statistical analysis of the model`s behavior.',
+    details: 'Modern machine learning models are highly flexible but lack transparency. Can we devise methods to explain the predictions of such models, without restricting their expressiveness? Can we do so even if we don`t know anything about their architecture, i.e., if they are "black-boxes"? In this project, we are developing methods for explaining the predictions made rather than constraining the models themselves to be interpretable. We are particularly interested in providing explanations for the predictions of complex machine learning models that operate on structured data, such as sentences, trees or graphs. For example, we use statistical input-output analysis to learn to interpret predictions of sequence-to-sequence models, such as those used in machine translation and dialogue systems.',
   })
-  await area1.addProduct(product1.id);
-  await area1.addService(service1.id);
-  await people1.addProduct(product1.id);
-  await people1.addService(service1.id);
+  await AI.addProduct(complex_machine_learning_models);
+  await ReginaBarzilay.addProduct(complex_machine_learning_models);
+  await JacobAndreas.addProduct(complex_machine_learning_models);
+  await FredoDurand.addProduct(complex_machine_learning_models);
+  await AleksanderMądry.addProduct(complex_machine_learning_models);
 
-  const 
-  product1 = await Product.create({
-    title: 'product1',
-    overview: 'prduct1 overview',
-    details: 'product1 details',
+
+  const Spoken_Language_Systems = await Product.create({
+    title: 'Spoken Language Systems',
+    overview: 'Our goal is to create technology that makes it possible for everyone in the world to interact with with computers via natural spoken language.',
+    details: 'We believe that conversational interfaces will enable us to converse with machines much in the same way that we communicate with one another and will play a fundamental role in facilitating our move toward an information-based society.',
   })
-  await area1.addProduct(product1.id);
-  await area1.addService(service1.id);
-  await people1.addProduct(product1.id);
-  await people1.addService(service1.id);
+  await AI.addProduct(Spoken_Language_Systems);
+  await GeraldSussman.addProduct(Spoken_Language_Systems);
+  await DanielaRus.addProduct(Spoken_Language_Systems);
+  await WilliamFreeman.addProduct(Spoken_Language_Systems);
 
 
-  const product1 = await Product.create({
-    title: 'product1',
-    overview: 'prduct1 overview',
-    details: 'product1 details',
+  const Representation_Learning_and_GNN = await Product.create({
+    title: 'Representation Learning and',
+    overview: 'Graph Neural Networks (GNNs) are a powerful framework revolutionizing graph representation learning, but our understanding of their representational properties is limited. This project aims to explore the theoretical foundations of learning with graphs and relations in AI via the GNN architecture.',
+    details: 'In machine learning, a system can effectively make predictions from raw data by learning representations. For such data, researchers are increasingly harnessing the power of Graph Neural Networks (GNNs), a structured framework for representation learning of graphs. This project focuses on the theoretical foundations for analyzing the expressive power of GNNs.By developing the theoretical foundations for reasoning about the expressive power of GNNs and expanding their representational capacity, we continue to pursue evolving and powerful architectures for machine learning with graphs.',
   })
-  await area1.addProduct(product1.id);
-  await area1.addService(service1.id);
-  await people1.addProduct(product1.id);
-  await people1.addService(service1.id);
+  await AI.addProduct(Representation_Learning_and_GNN);
+  await ReginaBarzilay.addProduct(Representation_Learning_and_GNN);
+  await FredoDurand.addProduct(Representation_Learning_and_GNN);
+  await WojciechMatusik.addProduct(Representation_Learning_and_GNN);
+  await JonathanRaganKelley.addProduct(Representation_Learning_and_GNN);
 
 
-  const product1 = await Product.create({
-    title: 'product1',
-    overview: 'prduct1 overview',
-    details: 'product1 details',
+  const High_Performance_Parallel_Clustering = await Product.create({
+    title: 'High Performance Parallel Clustering',
+    overview: 'We are designing new parallel algorithms, optimizations, and frameworks for clustering large-scale graph and geometric data.',
+    details: 'The goal of this project is to design novel parallel algorithms and optimizations for clustering large-scale graph and geometric data. We intend to consider various classes of clustering algorithms, and use them to cluster large datasets in AI applications. We will also design high-level programming frameworks to make it easier to write new high-performance clustering algorithms, and also plan to develop a benchmark suite for comparing the performance of different algorithms as well as their clustering quality under different metrics.',
   })
-  await area1.addProduct(product1.id);
-  await area1.addService(service1.id);
-  await people1.addProduct(product1.id);
-  await people1.addService(service1.id);
+  await AI.addProduct(High_Performance_Parallel_Clustering);
+  await PeterSzolovits.addProduct(High_Performance_Parallel_Clustering);
+  await RussTedrake.addProduct(High_Performance_Parallel_Clustering);
+  await WilliamFreeman.addProduct(High_Performance_Parallel_Clustering);
+  
 
 
-  const product1 = await Product.create({
-    title: 'product1',
-    overview: 'prduct1 overview',
-    details: 'product1 details',
+  const Ithema_Performance_Prediction = await Product.create({
+    title: 'Ithema Performance Prediction',
+    overview: 'Predicting the number of clock cycles a processor takes to execute a block of assembly instructions in steady-state (the throughput) is important for both compiler designers and performance engineers.',
+    details: 'Ithemal is the first tool that learns to predict the throughput of a set of instructions. It does so more accurately than state-of-the-art hand-written tools currently used in compiler backends and static machine code analyzers. In particular, Ithemal has less than half the error of state-of-the-art analytical models (LLVM`s llvm-mca and Intel`s IACA).',
   })
-  await area1.addProduct(product1.id);
-  await area1.addService(service1.id);
-  await people1.addProduct(product1.id);
-  await people1.addService(service1.id);
+  await AI.addProduct(Ithema_Performance_Prediction);
+  await JacobAndreas.addProduct(Ithema_Performance_Prediction);
+  await TommiJaakkola.addProduct(Ithema_Performance_Prediction);
+  await StefanieJegelka.addProduct(Ithema_Performance_Prediction);
 
 
-  const product1 = await Product.create({
-    title: 'product1',
-    overview: 'prduct1 overview',
-    details: 'product1 details',
+ 
+  const Advanced_Network_Architecture = await Product.create({
+    title: 'Advanced Network Architecture',
+    overview: 'The challenge that motivates the ANA group is to foster a healthy future for the Internet. The interplay of private sector investment, public sector regulation and public interest advocacy, as well as the global diversity in drivers and aspirations, makes for an uncertain future.',
+    details: 'Our goal is to carry out targeted research that can help shape this future. Our research targets core design principles and technology for large, decentralized, open-access networks such as the Internet. We are particularly concerned with the fundamental design principles that underlie tomorrow`s networks--what we call the architecture of networks. Technology is not the primary force that is shaping the future of the Internet. Our research methods include engineering studies, software and prototype development, and the study of networks using a multi-disciplinary approach including law, economics and political science. Specific projects range from detailed TCP performance analysis to the interplay of economics, regulation and technology in shaping the future. ',
+  })
+  await AI.addProduct(Advanced_Network_Architecture);
+  await RonaldRivest.addProduct(Advanced_Network_Architecture);
+  await AdamChlipala.addProduct(Advanced_Network_Architecture);
+  await MengjiaYan.addProduct(Advanced_Network_Architecture);
+
+
+  const Cryptography_on_Structured_Hardness = await Product.create({
+    title: 'Cryptography on Structured Hardness',
+    overview: 'We aim to base a variety of cryptographic primitives on complexity theoretic assumptions. We focus on the assumption that there exist highly structured problems.',
+    details: 'Most of modern cryptography is based on the conjectured hardness of some very specific problems like factoring.A prominent goal in cryptographic research is to base cryptography on a firmer complexity theoretic footing, such as the assumption that P is not equal to NP (which we know is necessary). This seems very far from our current understanding and so we aim to base cryptographic primitives on general complexity theoretic assumptions, albeit ones that are stronger than P not equals NP. Specifically, the assumption that P is not equal to NP means that there exists a language L that (1) is not in P but (2) is in NP. In this project we consider strengthening this assumption in two ways: 1) We assume that L is hard to compute for most instances (rather than merely hard in the worst-case). 2) We assume not only that L belongs to NP, but that it has additional structure.',
+  })
+  await Security.addProduct(Cryptography_on_Structured_Hardness);
+  await MengjiaYan.addProduct(Cryptography_on_Structured_Hardness);
+  await RonaldRivest.addProduct(Cryptography_on_Structured_Hardness);
+  await AdamChlipala.addProduct(Cryptography_on_Structured_Hardness);
+
+
+
+
+  const Route_and_Motion_Planning = await Product.create({
+    title: 'Route and Motion Planning',
+    overview: 'Our goal is to develop algorithms to deploy a fleet of vehicles for Mobility-on-Demand in large road networks governed by rules of the road.',
+    details: 'Complex traffic situations may require vehicles to handle cases where the rules of the road are in conflict with each other or lead to infeasible planning problems. It is dangerous to just hand off the control to the human and expect that they can deal with the problematic situation. Thus, we require planning algorithms that provide motion plans even when not all rules of the road can be enforces (e.g., driving in the left lane to avoid a construction area), preferably in a minimum violating way.',
   })
 
-  const product1 = await Product.create({
-    title: 'product1',
-    overview: 'prduct1 overview',
-    details: 'product1 details',
+  await Graphics.addProduct(Route_and_Motion_Planning);
+  await FredoDurand.addProduct(Route_and_Motion_Planning);
+  await WojciechMatusik.addProduct(Route_and_Motion_Planning);
+  await  JonathanRaganKelley.addProduct(Route_and_Motion_Planning);
+
+
+ 
+  const MBlocks_Modular_Robotics = await Product.create({
+    title: 'MBlocks Modular Robotics',
+    overview: 'Creating modular robotic systems which can reconfigure themselves in order to create new robots.',
+    details: 'The vision of the field of Modular Self-Reconfigurable Robotics (MSRR) is to create swarms of robots which are able to connect to each other and to be able to change their configuration in order to create new robots or structures. The M-Blocks projects introduces a novel hardware system using pulses of angular momentum and magnetic hinges in an attempt to simplify the practical challenges involving modules moving on a substrate of other modules.',
   })
+  await Robotics.addProduct(MBlocks_Modular_Robotics);
+  await StefanieJegelka.addProduct(MBlocks_Modular_Robotics);
+  await DanielaRus.addProduct(MBlocks_Modular_Robotics);
+  await PeterSzolovits.addProduct(MBlocks_Modular_Robotics);
+
+  const Soft_Robotic_Hand = await Product.create({
+    title: 'Soft Robotic Hand',
+    overview: 'A soft hand capable of robustly grasping and identifying objects using internal strain and force measurements as well as computer vision.',
+    details: 'A soft hand that is capable of robustly grasping and identifying objects based on internal state measurements along with a system that autonomously performs grasps. The highly compliant soft hand allows for intrinsic robustness to grasping uncertainties. The addition of internal sensing allows the configuration of the hand and object to be detected.',
+  })
+  await Robotics.addProduct(Soft_Robotic_Hand);
+  await PeterSzolovits.addProduct(Soft_Robotic_Hand);
+  await DanielaRus.addProduct(Soft_Robotic_Hand);
+  await StefanieJegelka.addProduct(Soft_Robotic_Hand);
+
+
+  const Drones_that_Drive = await Product.create({
+    title: 'Drones that Drive',
+    overview: 'Multi-robot path planning for robot swarms that can both fly and drive.',
+    details: 'The multi-robot path planning problem has been extensively studied for the cases of flying and driving vehicles. However, path planning for the case of vehicles that can both fly and drive has not yet been considered.We`ve developed a framework for multi-robot path planning for a swarm of flying-and-driving vehicles. By putting a lightweight driving platform on a quadcopter, we create a robust vehicle with an energy efficient driving mode and an agile flight mode.',
+  })
+  await Robotics.addProduct(Drones_that_Drive);
+  await PeterSzolovits.addProduct(Drones_that_Drive);
+  await DanielaRus.addProduct(Drones_that_Drive);
+  await StefanieJegelka.addProduct(Drones_that_Drive);
 
 
 
