@@ -23,6 +23,7 @@ function defineDatabaseStructure() {
       image: DataTypes.STRING,
       overview: DataTypes.TEXT,
       details: DataTypes.TEXT,
+      position: DataTypes.STRING,
     },
     {
       underscored: true,

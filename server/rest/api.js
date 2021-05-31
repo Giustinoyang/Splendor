@@ -41,7 +41,7 @@ async function init() {
     const people = await People.findAll()
     return res.json(people)
   })
-  app.get('/people/:id', async (req, res) =>{
+  app.get('/person/:id', async (req, res) =>{
     const { id } = req.params
     const people = await People.findOne({
       where: {id},
@@ -65,7 +65,7 @@ async function init() {
   })
   app.get('/service/:id', async(req, res) =>{
     const { id } = req.params
-    const service = await Product.findOne({
+    const service = await Service.findOne({
       where: {id},
     })
     return res.json(service)

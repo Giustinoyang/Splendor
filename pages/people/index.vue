@@ -23,7 +23,7 @@
 
 <script>
 import axios from 'axios'
-import ArticleMini from '~/components/blog/ArticleMini.vue'
+import ArticleMini from '~/components/people/ArticleMini.vue'
 export default {
   components: {
     ArticleMini,
@@ -60,7 +60,7 @@ h2 {
 }
 .article-grid {
   display: grid;
-  grid-template-columns: repeat(2, calc(100% / 2));
+  grid-template-columns: repeat(1, calc(100% / 1));
   grid-gap: 10px;
   margin-top: 40px;
 }

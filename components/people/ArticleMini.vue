@@ -1,9 +1,12 @@
 <template>
   <div class="article-mini">
     <div class="card">
-      <h3>{{ title }}</h3>
+        <div class="img" :style="{ 'background-image': `url(${image})` }"></div>
     </div>
-    <div class="card2"><p>{{summary}}</p></div>
+    <div class="card2">
+        <h3>{{ title }}</h3>
+        <p>{{summary}}</p>
+    </div>
   </div>
 </template>
 
@@ -19,9 +22,7 @@ export default {
 
 <style scoped>
 .card {
-  padding: 20px 10px;
-  border: 1px solid grey;
-  border-radius: 400px;
+  border-radius: 100px;
   float: left;
   width: 30%;
   height: 180px;
@@ -34,11 +35,6 @@ export default {
   width: 60%;
   height: 180px;
 }
-h3 {
-  position: relative;
-  top: 50%; 
-  transform: translateY(-50%);
-}
 p {
   text-align: center;
   position: relative;
@@ -47,14 +43,14 @@ p {
 }
 
 .img {
-  width: 100%;
-  height: 200px;
-  max-width: 600px;
-  margin: auto;
-  background-size: cover;
+  width: auto;
+  height: 100%;
+  max-width: 100%;
+  max-height:100%;
+  background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
-  margin-bottom: 40px;
+  border-radius: 4px;
 }
 .overv {
   overflow:hidden;

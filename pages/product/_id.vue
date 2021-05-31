@@ -3,7 +3,7 @@
     <header>
       <h1>{{ product.title }}</h1>
       <h4>{{ product.overview }}</h4>
-      <img :src="product.image" :alt="product.overview" />
+      <img :src="product.image" />
     </header>
     <article>
       <p>

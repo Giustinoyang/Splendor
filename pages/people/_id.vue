@@ -18,7 +18,7 @@ export default {
     const { id } = route.params
     console.log('this url', process.env.BASE_URL)
     const { data } = await $axios.get(
-      `${process.env.BASE_URL}/api/people/${id}`
+      `${process.env.BASE_URL}/api/person/${id}`
     )
     const person = data
     return {

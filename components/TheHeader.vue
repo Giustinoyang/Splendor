@@ -52,7 +52,7 @@ export default {
         },
         {
           name: 'People',
-          path: 'people',
+          path: '/people',
         },
       ],
       titleOptions: [
