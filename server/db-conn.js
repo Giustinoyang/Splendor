@@ -207,7 +207,7 @@ async function insertFakeData() {
   })
   const FredoDurand = await People.create({
     name: 'Fredo Durand',
-    overview: 'I work in the area about computer grphic and use artificial intelligence to deal with. ',
+    overview: 'I work in the area about computer graphic and use artificial intelligence to deal with. ',
     details: 'I interest span most aspects of picture generation and creation. This includes realistic graphics, real-time rendering, non-photorealistic rendering, as well as computational photography.',
   })
   const WilliamFreeman = await People.create({
@@ -221,7 +221,7 @@ async function insertFakeData() {
     details: 'Our project advances how machines can learn, predict or control, and do so at scale in an efficient, principled, and interpretable manner. Our research in machine learning extends from foundational theory to modern applications, focusing especially on statistical inference and estimation tasks that lie at the heart of complex learning problems.',
   })
   const StefanieJegelka = await People.create({
-    name: 'Stefanie Jegelka1',
+    name: 'Stefanie Jegelka',
     overview: 'I mostly work about machine learning.',
     details: 'My work is in algorithmic machine learning, and spans modeling, optimization algorithms, theory and applications. In particular, we have been working on exploiting mathematical structure for discrete and combinatorial machine learning problems, for robustness and for scaling machine learning algorithms.',
   })
@@ -298,7 +298,7 @@ async function insertFakeData() {
     overview: 'Artificial intelligence (AI) is intelligence demonstrated by machines.',
     details: ' "artificial intelligence" is often used to describe machines that mimic "cognitive" functions that humans associate with the human mind, such as "learning" and "problem solving". As machines become increasingly capable, tasks considered to require "intelligence" are often removed from the definition of AI, a phenomenon known as the AI effect. The traditional problems (or goals) of AI research include reasoning, knowledge representation, planning, learning, natural language processing, perception and the ability to move and manipulate objects.',
   })
-  const Robitics = await Area.create({
+  const Robotics = await Area.create({
     title: 'Robotics',
     overview: 'Robotics is an interdisciplinary field that integrates computer science and engineering. Robotics involves design, construction, operation, and use of robots.',
     details: 'The goal of robotics is to design machines that can help and assist humans. Robotics integrates fields of mechanical engineering, electrical engineering, information engineering, mechatronics, electronics, bioengineering, computer engineering, control engineering, software engineering, mathematics, among others. Robotics develops machines that can substitute for humans and replicate human actions. Robots can be used in many situations and for many purposes, but today many are used in dangerous environments (including inspection of radioactive materials, bomb detection and deactivation), manufacturing processes, or where humans cannot survive',
@@ -329,19 +329,213 @@ async function insertFakeData() {
   await AI.addPeople(WilliamFreeman);
   await AI.addPeople(TommiJaakkola);
   await AI.addPeople(StefanieJegelka);
+  await Robotics.addPeople(StefanieJegelka);
   await AI.addPeople(AleksanderMądry);
   await Graphics.addPeople(AleksanderMądry);
   await Graphics.addPeople(WojciechMatusik);
   await AI.addPeople(DanielaRus);
-  await Robitics.addPeople(DanielaRus);
+  await Robotics.addPeople(DanielaRus);
   await BigData.addPeople(JoachimBuhmann);
   await Security.addPeople(MengjiaYan);
   await BigData.addPeople(AlanWillsky);
   await AI.addPeople(RussTedrake);
+  await Robotics.addPeople(RussTedrake);
   await AI.addPeople(PeterSzolovits);
+  await Robotics.addPeople(PeterSzolovits);
   await AI.addPeople(GeraldSussman);
   await Security.addPeople(RonaldRivest);
   await Graphics.addPeople(JonathanRaganKelley);
+
+
+
+  const Mapster = await Product.create({
+    title: 'Mapster',
+    overview: 'Automated techniques for building better and smarter maps from aerial imagery and terrestrial position sensor data.',
+    details: 'Creating and maintaining maps is both expensive and labor-intensive. As a result, maps often have poor coverage, or contain outdated information. For example, many villages in Indonesia are not covered by street maps. Below, the closest mapped roads (bottom, in black) to a village may be miles away. Our goal is to leverage GPS trajectories, satellite and aerial imagery, drone imagery, and other data sources to improve the accuracy and coverage of maps, and to reduce the delay between physical road network changes and updates to the map.',
+  })
+  await Graphics.addProduct(Mapster);
+  await WilliamFreeman.addProduct(Mapster.id);
+  await FredoDurand.addProduct(Mapster.id);
+
+  const Congestion_Control_Plane = await Product.create({
+    title: 'Congestion_Control_Plane',
+    overview: 'A new platform and API for writing congestion control algorithms.',
+    details: 'The congestion control plane is a new API for writing congestion control algorithms. It provides three benefits:Supporting Sophisticated Algorithms: Many modern congestion control proposals use sophisticated processing to make control decisions. It is often difficult to implement these algorithms within the “datapath” - any module that provides data transmission and reception interfaces between higher-layer applications and lower-layer network hardware. CCP allows algorithm implementations to take advantage of useful user-space libraries independent of the target datapath. Write-Once, Run-Anywhere: Recently, new datapaths have emerged, leading to the “matrix of sadness,” where congestion control algorithm developers must re-implement their algorithms anew on each datapath. CCP provides a runtime for algorithms which interfaces with each datapath, so the same algorithm code runs in multiple datapaths without modification. New Capabilities: It is difficult to implement new congestion control capabilities such as the congestion manager in current datapaths. CCP allows developers to add these capabilities without datapath modification.',
+  })
+  await Network.addProduct(Congestion_Control_Plane);
+  await HariBalakrishnan.addProduct(Congestion_Control_Plane);
+  await AdamChlipala.addProduct(Congestion_Control_Plane);
+
+  const Beecluster = await Product.create({
+    title: 'Beecluster',
+    overview: 'A tasking framework for cross-platform drone apps.',
+    details: 'Dynamic Tasking: BeeCluster embraces dynamic task graph (DTG) as its core programming model, allowing your application to react to the environment by creating new tasks or canceling existing tasks dynamically.Flexible Virtual Drones: BeeCluster provides a set of versatile abstractions mapping your virtual drones to physical drones. You can even define a virtual drone with infinite flying time in BeeCluster!',
+  })
+  await Robotics.addProduct(Beecluster);
+  await DanielaRus.addProduct(Beecluster.id);
+  await StefanieJegelka.addProduct(Beecluster.id);
+  await RussTedrake.addProduct(Beecluster.id);
+
+  const RFocus = await Product.create({
+    title: 'RFocus',
+    overview: 'Beamforming Using Thousands of Passive Antennas',
+    details: 'RFocus adds more antennas to the environment. They are arranged as a 2D surface, where each antenna is a simple backscatter reflector, similar to a passive RFID tag. They do not emit any signal of their own; instead they simply reflect signal incident from the transmitter in a controlled way. ',
+  })
+  await Network.addProduct(RFocus.id);
+  await HariBalakrishnan.addProduct(RFocus.id);
+  await AdamChlipala.addProduct(RFocus.id);
+  await MohammadAlizadeh.addProduct(RFocus.id);
+
+
+  const Fastpass = await Service.create({
+    title: 'Fastpass',
+    overview: 'Fastpass is a datacenter network framework.',
+    details: 'Fastpass aims for high utilization with zero queueing. It provides low median and tail latencies for packets, high data rates between machines, and flexible network resource allocation policies. The key idea in Fastpass is fine-grained control over packet transmission times and network paths.',
+    case: 'Flowtune is developing network monitoring and scheduling based on principles derived from this work.',
+  })
+  await Network.addService(Fastpass);
+  await HariBalakrishnan.addService(Fastpass);
+  await AdamChlipala.addService(Fastpass);
+
+  const Helping_robots_learn = await Service.create({
+    title: 'Helping robots learn',
+    overview: 'Help robots learn faster by providing demonstrations when they need help.',
+    details: 'This project explores a master-apprentice model of learning that combines self-supervision with learning by demonstration. A robot learns to grasp on its own by repeatedly trying to pick up a bottle. But if it can not find a good grasp using its current model, it asks a person for help. The person is supervising the robot in a virtual reality (VR) control room, and they can take control of the robot to provide grasping demonstrations. ',
+    case: 'Results indicate that the robot learned faster when demonstrations were included; it learned a model with 100% grasping accuracy after 150 grasps. ',
+  })
+  
+  await AI.addService(Helping_robots_learn);
+  await JacobAndreas.addService(Helping_robots_learn);
+  await TommiJaakkola.addService(Helping_robots_learn);
+  await DanielaRus.addService(Helping_robots_learn);
+
+  
+
+  const Data_Driven_Inference = await Service.create({
+    title: 'Data Driven Inference',
+    overview: 'We use machine learning to improve outcomes in medicine, finance, and sports.',
+    details: 'Our group focuses on the application of advanced computational techniques to medicine. ',
+    case: 'Current projects include prediction of adverse medical events, prediction of response to therapies, non-invasive monitoring and diagnostic tools, and tele-medicine.',
+  })
+ 
+  await BigData.addService(Data_Driven_Inference);
+  await ReginaBarzilay.addService(Data_Driven_Inference);
+  await TamaraBroderick.addService(Data_Driven_Inference);
+  await AlanWillsky.addService(Data_Driven_Inference);
+
+
+  const Risk_and_Causes_of_Infection = await Product.create({
+    title: 'Risk and Causes of Infection',
+    overview: 'We aim to study the causes and transmission modes of infectious diseases among members of a community in the presence of hidden, asymptomatic spreaders of the pathogen.',
+    details: 'When modeling the spread of an infection among members or nodes of a community, each node`s probability of getting infected depends on its innate susceptibility and its exposure to the contagion through its neighbors.In many cases, a neighbor`s influence is hidden. Such is the case with asymptomatic carriers of the disease. We develop generative models to identify the hidden influencers in both static and dynamic networks. We use the neighbors` hidden influence state to compute an accurate estimate of exposure to the contagion. We propose efficient variational inference algorithms to learn our models parameters. We also study the causal mechanisms that lead to an elevated risk of infection.',
+  })
+ 
+  await BigData.addProduct(Risk_and_Causes_of_Infection);
+  await MohammadAlizadeh.addProduct(Risk_and_Causes_of_Infection);
+  await ReginaBarzilay.addProduct(Risk_and_Causes_of_Infection);
+  
+
+
+
+  const Predicting_Adverse_Events = await Service.create({
+    title: 'Predicting Adverse Events',
+    overview: 'Big data forecasting is the core application of big data. Big data forecasting transforms the traditional meaning of forecasting into “current measurement”.',
+    details: 'The advantage of big data forecasting is that it transforms a very difficult forecasting problem into a relatively simple description problem, which is beyond the reach of traditional small data sets. From the perspective of forecasting, the results of big data forecasting not only lead to simple and objective conclusions for dealing with real business, but also can be used to help companies make business decisions.',
+    case: 'Transitioning machine learning models across electronic health record (EHR) versions can be improved by mapping different EHR encodings to a common vocabulary.',
+  })
+  await BigData.addService(Predicting_Adverse_Events);
+  await ReginaBarzilay.addService(Predicting_Adverse_Events);
+  await TamaraBroderick.addService(Predicting_Adverse_Events);
+
+
+
+
+  const product1 = await Product.create({
+    title: 'product1',
+    overview: 'prduct1 overview',
+    details: 'product1 details',
+  })
+ 
+  await area1.addProduct(product1.id);
+  await area1.addService(service1.id);
+  await people1.addProduct(product1.id);
+  await people1.addService(service1.id);
+
+  const service1 = await Service.create({
+    title: 'service1',
+    overview: 'service1 overview',
+    details: 'service1 details',
+    case: 'service1 case',
+  })
+
+
+  const product1 = await Product.create({
+    title: 'product1',
+    overview: 'prduct1 overview',
+    details: 'product1 details',
+  })
+  await area1.addProduct(product1.id);
+  await area1.addService(service1.id);
+  await people1.addProduct(product1.id);
+  await people1.addService(service1.id);
+
+  const 
+  product1 = await Product.create({
+    title: 'product1',
+    overview: 'prduct1 overview',
+    details: 'product1 details',
+  })
+  await area1.addProduct(product1.id);
+  await area1.addService(service1.id);
+  await people1.addProduct(product1.id);
+  await people1.addService(service1.id);
+
+
+  const product1 = await Product.create({
+    title: 'product1',
+    overview: 'prduct1 overview',
+    details: 'product1 details',
+  })
+  await area1.addProduct(product1.id);
+  await area1.addService(service1.id);
+  await people1.addProduct(product1.id);
+  await people1.addService(service1.id);
+
+
+  const product1 = await Product.create({
+    title: 'product1',
+    overview: 'prduct1 overview',
+    details: 'product1 details',
+  })
+  await area1.addProduct(product1.id);
+  await area1.addService(service1.id);
+  await people1.addProduct(product1.id);
+  await people1.addService(service1.id);
+
+
+  const product1 = await Product.create({
+    title: 'product1',
+    overview: 'prduct1 overview',
+    details: 'product1 details',
+  })
+  await area1.addProduct(product1.id);
+  await area1.addService(service1.id);
+  await people1.addProduct(product1.id);
+  await people1.addService(service1.id);
+
+
+  const product1 = await Product.create({
+    title: 'product1',
+    overview: 'prduct1 overview',
+    details: 'product1 details',
+  })
+
+  const product1 = await Product.create({
+    title: 'product1',
+    overview: 'prduct1 overview',
+    details: 'product1 details',
+  })
+
 
 
 
