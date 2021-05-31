@@ -25,6 +25,51 @@ async function init() {
     })
     return res.json(article)
   })
+  app.get('/areas', async (req, res) =>{
+    const areas = await Area.findAll()
+    return res.json(areas)
+  })
+  app.get('/area/:id', async (req, res) =>{
+    const { id } = req.params
+    const area = await Area.findOne({
+      where: {id},
+      //include: { model: Person },
+    })
+    return res.json(area)
+  })
+  app.get('/people', async (req, res) =>{
+    const people = await People.findAll()
+    return res.json(people)
+  })
+  app.get('/people/:id', async (req, res) =>{
+    const { id } = req.params
+    const people = await People.findOne({
+      where: {id},
+    })
+    return res.json(people)
+  })
+  app.get('/products', async(req, res) =>{
+    const products =await Product.findAll()
+    return res.json(products)
+  })
+  app.get('/product/:id', async(req, res) =>{
+    const { id } = req.params
+    const product = await Product.findOne({
+      where: {id},
+    })
+    return res.json(product)
+  })
+  app.get('/services', async(req, res) =>{
+    const services =await Service.findAll()
+    return res.json(services)
+  })
+  app.get('/service/:id', async(req, res) =>{
+    const { id } = req.params
+    const service = await Product.findOne({
+      where: {id},
+    })
+    return res.json(service)
+  })
   // This one is just an example
   app.get('/ad', (req, res) => {
     return res.json({
