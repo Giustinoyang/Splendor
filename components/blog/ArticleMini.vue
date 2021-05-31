@@ -3,7 +3,7 @@
     <div class="card">
       <h3>{{ title }}</h3>
       <div class="img" :style="{ 'background-image': `url(${image})` }"></div>
-      <p>{{ summary }}</p>
+      <div class="overv"><p>{{ summary }}</p></div>
     </div>
   </div>
 </template>
@@ -28,7 +28,7 @@ h3 {
   margin-bottom: 10px;
 }
 p {
-  height: 60px;
+  height: 120px;
 }
 
 .img {
@@ -40,5 +40,9 @@ p {
   background-position: center;
   background-repeat: no-repeat;
   margin-bottom: 40px;
+}
+.overv {
+  overflow:hidden;
+  text-overflow:ellipsis;
 }
 </style>

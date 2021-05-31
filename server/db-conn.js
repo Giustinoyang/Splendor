@@ -610,9 +610,9 @@ async function insertFakeData() {
 
 
   const Representation_Learning_and_GNN = await Product.create({
-    title: 'Representation Learning and',
-    overview: 'Graph Neural Networks (GNNs) are a powerful framework revolutionizing graph representation learning, but our understanding of their representational properties is limited. This project aims to explore the theoretical foundations of learning with graphs and relations in AI via the GNN architecture.',
-    details: 'In machine learning, a system can effectively make predictions from raw data by learning representations. For such data, researchers are increasingly harnessing the power of Graph Neural Networks (GNNs), a structured framework for representation learning of graphs. This project focuses on the theoretical foundations for analyzing the expressive power of GNNs.By developing the theoretical foundations for reasoning about the expressive power of GNNs and expanding their representational capacity, we continue to pursue evolving and powerful architectures for machine learning with graphs.',
+    title: 'Representation Learning and GNN',
+    overview: 'This project aims to explore the theoretical foundations of learning with graphs and relations in AI via the GNN architecture.',
+    details: 'Graph Neural Networks (GNNs) are a powerful framework revolutionizing graph representation learning, but our understanding of their representational properties is limited. In machine learning, a system can effectively make predictions from raw data by learning representations. For such data, researchers are increasingly harnessing the power of Graph Neural Networks (GNNs), a structured framework for representation learning of graphs. This project focuses on the theoretical foundations for analyzing the expressive power of GNNs.By developing the theoretical foundations for reasoning about the expressive power of GNNs and expanding their representational capacity, we continue to pursue evolving and powerful architectures for machine learning with graphs.',
   })
   await AI.addProduct(Representation_Learning_and_GNN);
   await ReginaBarzilay.addProduct(Representation_Learning_and_GNN);

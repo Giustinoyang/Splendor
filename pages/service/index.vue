@@ -6,15 +6,15 @@
     </header>
     <section class="article-grid">
       <div
-        v-for="(article, articleIndex) of articles"
-        :key="'art-' + articleIndex"
+        v-for="(service, serviceid) of services"
+        :key="'art-' + serviceid"
         class="article"
-        @click="goToArticle(`/blog/${article.id}`)"
+        @click="goToArticle(`/service/${service.id}`)"
       >
         <article-mini
-          :title="article.title"
-          :summary="article.summary"
-          :image="article.image"
+          :title="service.title"
+          :summary="service.overview"
+          :image="service.image"
         ></article-mini>
       </div>
     </section>
@@ -29,10 +29,10 @@ export default {
     ArticleMini,
   },
   async asyncData({ $axios }) {
-    const { data } = await $axios.get(`${process.env.BASE_URL}/api/articles`)
-    const articles = data
+    const { data } = await $axios.get(`${process.env.BASE_URL}/api/services`)
+    const services = data
     return {
-      articles,
+      services,
     }
   },
   data() {
@@ -60,7 +60,7 @@ h2 {
 }
 .article-grid {
   display: grid;
-  grid-template-columns: repeat(3, calc(100% / 3));
+  grid-template-columns: repeat(2, calc(100% / 2));
   grid-gap: 10px;
   margin-top: 40px;
 }
