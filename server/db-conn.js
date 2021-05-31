@@ -179,126 +179,147 @@ async function insertFakeData() {
   const ReginaBarzilay = await People.create({
     name: 'Regina Barzilay',
     image: '/people/ReginaBarzilay.png',
+    position: 'teamleader',
     overview: 'I develop machine learning models that aim to understand and generate natural languages and focous on big data.',
     details: 'We are currently witnessing the first generation of NLP tools that have been deployed at scale and are used by millions of people. However, the major component of this success is access to large amounts of training data which machines use to learn mappings between input and output. I am interested in designing algorithms that do not suffer from this annotation dependence. Specifically, we are developing deep learning models that can transfer annotations across domains and languages, that can learn from a few annotated examples by utilizing supplementary data sources, and that can take advantage of human-provided rationales to constrain model structure.',
   })
   const MohammadAlizadeh = await People.create({
     name: 'Mohammad Alizadeh',
     image: '/people/MohammadAlizadeh.png',
+    position: 'engineer',
     overview: 'I work in the areas of computer networks and big data.',
     details: 'My research aims to improve the performance, robustness, and ease of management of future networks and cloud computing systems. My current research centers on network protocols and algorithms for large-scale datacenters, programmable switching architectures, and learning-based networked systems. I am also broadly interested in performance modeling and analysis of computer systems and bridging theory and practice in computer system design.',
   })
   const HariBalakrishnan = await People.create({
     name: 'Hari Balakrishnan',
     image: '/people/HariBalakrishnan.png',
+    position: 'teamleader',
     overview: 'I am interested in the area of networked computer systems.',
     details: 'My work is in the area of networked computer systems, with current interests in networking, sensing, and perception for a world of mobile, sensor-equipped devices connected to services running in the cloud or the network edge. My past work has contributed to mobile and sensor computing, wireless networks, Internet architecture (congestion control, routing, network security), overlay and P2P networks, and data management (stream processing and secure databases)',
   })
   const TamaraBroderick = await People.create({
     name: 'Tamara Broderick1',
     image: '/people/TamaraBroderick.png',
+    position: 'engineer',
     overview: 'I am interested in big data.',
     details: 'In my project, I am interested in understanding how we can reliably quantify uncertainty and robustness in modern, complex data analysis procedures. To that end, I am particularly interested in Bayesian inference and graphical models – with an emphasis on scalable, nonparametric, and unsupervised learning.',
   })
   const JacobAndreas = await People.create({
     name: 'Jacob Andreas',
     image: '/people/JacobAndreas.png',
+    position: 'engineer',
     overview: 'I am interested in language as a communicative and computational tool.',
     details: 'My work aims to (1) understand the computational foundations of efficient language learning, and (2) build general-purpose intelligent systems that can communicate effectively with humans and learn from human guidance.',
   })
   const AdamChlipala = await People.create({
     name: 'Adam Chlipala',
     image: '/people/AdamChlipala.png',
+    position: 'engineer',
     overview: 'My research is about the network security.',
     details: 'My traditional areas are programming languages and formal methods, but my interests have broadened to include other aspects of computer-system design and implementation. I like the idea of doing clean-slate redesign of computing stacks with current security and privacy concerns front-and-center, which I do believe involves, in a central way, my traditional focus of mechanized mathematical proof.',
   })
   const FredoDurand = await People.create({
     name: 'Fredo Durand',
     image: '/people/FredoDurand.png',
+    position: 'engineer',
     overview: 'I work in the area about computer graphic and use artificial intelligence to deal with. ',
     details: 'I interest span most aspects of picture generation and creation. This includes realistic graphics, real-time rendering, non-photorealistic rendering, as well as computational photography.',
   })
   const WilliamFreeman = await People.create({
     name: 'William Freeman',
     image: '/people/WilliamFreeman.png',
+    position: 'engineer',
     overview: 'I deal with computer graphic and machine learning.',
     details: 'My current research interests include machine learning applied to computer vision, Bayesian models of visual perception, and interactive applications of computer vision.',
   })
   const TommiJaakkola = await People.create({
     name: 'Tommi Jaakkola',
     image: '/people/TommiJaakkola.png',
+    position: 'engineer',
     overview: 'My research is about machine learning.',
     details: 'Our project advances how machines can learn, predict or control, and do so at scale in an efficient, principled, and interpretable manner. Our research in machine learning extends from foundational theory to modern applications, focusing especially on statistical inference and estimation tasks that lie at the heart of complex learning problems.',
   })
   const StefanieJegelka = await People.create({
     name: 'Stefanie Jegelka',
     image: '/people/StefanieJegelka.png',
+    position: 'engineer',
     overview: 'I mostly work about machine learning.',
     details: 'My work is in algorithmic machine learning, and spans modeling, optimization algorithms, theory and applications. In particular, we have been working on exploiting mathematical structure for discrete and combinatorial machine learning problems, for robustness and for scaling machine learning algorithms.',
   })
   const  AleksanderMądry = await People.create({
     name: ' Aleksander Mądry',
     image: '/people/AleksanderMądry.png',
+    position: 'engineer',
     overview: 'I usually work for machine learning and computer graphic.',
     details: 'My work spans algorithmic graph theory, optimization and machine learning. In particular, I have a strong interest in building on the existing machine learning techniques to forge a decision-making toolkit that is reliable and well-understood enough to be safely and responsibly deployed in the real world.',
   })
   const WojciechMatusik = await People.create({
     name: 'Wojciech Matusik',
     image: '/people/WojciechMatusik.png',
+    position: 'engineer',
     overview: 'My work is about computer graphic.',
     details: 'I work on computer graphics: data-driven methods, physics-based simulation, appearance modeling, computational displays; and computer vision: inverse problems, data-driven methods, gaze models, computational photography, multi-modal learning.',
   })
   const DanielaRus = await People.create({
     name: 'Daniela Rus',
     image: '/people/DanielaRus.png',
+    position: 'teamleader',
     overview: 'My research interests are in robotics, mobile computing, and data science.',
     details: 'We aim to develop the science of autonomy toward a future with robots and AI systems integrated into everyday life, supporting people with cognitive and physical tasks.',
   })
   const JoachimBuhmann = await People.create({
     name: 'Joachim Buhmann',
     image: '/people/JoachimBuhmann.png',
+    position: 'engineer',
     overview: 'My team interests cover the area of pattern recognition and data analysis.',
     details: 'I am interested in statistical learning theory and applied statistics. The application areas range from computer vision and image analysis, remote sensing to bioinformatics.',
   })
   const MengjiaYan = await People.create({
     name: 'Mengjia Yan',
     image: '/people/MengjiaYan.png',
+    position: 'engineer',
     overview: 'I am intersted in computer architecture and security.',
     details: 'My team interest lies in the areas of computer architecture and security, with a focus on side channel attacks and defenses. My group works on exploiting new micro-architectural vulnerabilities and designing comprehensive and efficient defense mechanisms.',
   })
   const AlanWillsky = await People.create({
     name: 'Alan Willsky',
     image: '/people/AlanWillsky.png',
+    position: 'engineer',
     overview: 'My interests is about multiresolution methods for large-scale data.',
     details: 'My recently work on multiresolution methods for large-scale data fusion and assimilation. This method can be used in fields including target tracking, object recognition, fusion of nontraditional data sources, oil exploration, oceanographic remote sensing. ',
   })
   const RussTedrake = await People.create({
     name: 'Russ Tedrake',
     image: '/people/RussTedrake.png',
+    position: 'engineer',
     overview: 'I am interested in underactuated motor control systems in animals and machines. ',
     details: 'I am interested in underactuated motor control systems in animals and machines that are capable of executing dynamically dexterous tasks and interacting with uncertain environments. We believe that the design of these control systems is intimately related to the mechanical designs of their machines, and that tools from machine learning and optimal control can be used to exploit this coupling when classical control techniques fail.',
   })
   const  PeterSzolovits = await People.create({
     name: ' Peter Szolovits',
     image: '/people/PeterSzolovits.png',
+    position: 'engineer',
     overview: 'My job center on the application of AI methods.',
     details: 'My job center on the application of AI methods to problems of medical decision making, predictive modeling, decision support, and design of information systems for health care institutions and patients. He has worked on problems of diagnosis, therapy planning, execution and monitoring for various medical conditions, computational aspects of genetic counseling, controlled sharing of health information, and privacy and confidentiality issues in medical record systems.',
   })
   const GeraldSussman = await People.create({
     name: 'Gerald Sussman',
     image: '/people/GeraldSussman.png',
+    position: 'teamleader',
     overview: 'My work about Artificial Intelligence',
     details: 'My work about Artificial Intelligence include problem solving by debugging almost-right plans, propagation of constraints applied to electrical circuit analysis and synthesis, dependency-based explanation and dependency-based backtracking, and various language structures for expressing problem-solving strategies.',
   })
   const RonaldRivest = await People.create({
     name: 'Ronald Rivest',
     image: '/people/RonaldRivest.png',
+    position: 'CEO',
     overview: 'I am familiar about computer security-cryptographic',
     details: 'i have extensive experience in cryptographic design and cryptanalysis. Familiar in RSA public-key cryptosystem. My work extensively in the areas of algorithms and election security.',
   })
   const  JonathanRaganKelley = await People.create({
     name: ' Jonathan Ragan Kelley',
     image: '/people/JonathanRaganKelley.png',
+    position: 'teamleader',
     overview:'I am interested in computer graphic.',
     details: 'My work focuses on high-efficiency computer graphics, at the intersection of graphics with systems, architecture, and compilers.',
   })
