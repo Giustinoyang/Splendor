@@ -3,12 +3,38 @@
     <header>
       <h1>{{ area.title }}</h1>
       <h4>{{ area.overview }}</h4>
+      <p>Working on: </p>
+       <div
+        v-for="(person, personid) of area.people"
+        :key="'art-' + personid"
+        class='personD'
+        @click="goToArticle(`/people/${person.id}`)"
+        >
+          {{person.name}}
+        </div>
       <img :src="area.image" :alt="area.overview" />
     </header>
     <article>
       <p>
         {{ area.details }}
       </p>
+      <p>Product and Service: </p>
+      <div
+        v-for="(product, productid) of area.products"
+        :key="'art-' + productid"
+        class='personD'
+        @click="goToArticle(`/product/${product.id}`)"
+        >
+          {{product.title}}
+      </div>
+      <div
+        v-for="(service, serviceid) of area.services"
+        :key="'art-' + serviceid"
+        class='personD'
+        @click="goToArticle(`/service/${service.id}`)"
+        >
+          {{service.title}}
+      </div>
     </article>
   </section>
 </template>
@@ -25,12 +51,20 @@ export default {
       area,
     }
   },
+  methods: {
+    goToArticle(path) {
+      this.$router.push({ path })
+    },
+  },
 }
 </script>
 
 <style scoped>
 h4 {
   margin: 30px 0;
+}
+.personD {
+  white-space:nowrap;
 }
 .comments {
   margin-top: 60px;

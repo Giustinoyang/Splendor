@@ -30,7 +30,12 @@ h2 {
 h4 {
   margin-bottom: 30px;
 }
-
+img {
+  width: auto;
+  height: auto;
+  max-width: 50%;
+  max-height:50%;
+}
 p {
   text-align: left;
 }

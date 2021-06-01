@@ -33,7 +33,7 @@ async function init() {
     const { id } = req.params
     const area = await Area.findOne({
       where: {id},
-      //include: { model: Person },
+      include:[People,Product, Service],
     })
     return res.json(area)
   })
@@ -47,6 +47,20 @@ async function init() {
       where: {id},
     })
     return res.json(people)
+  })
+  app.get('/people/:position', async(req, res)=>{
+    const{ position } = req.params
+    const person = await People.findAll({
+      where: {position: position},
+    })
+    return res.json(person);
+  })
+  app.get('/positions', async(req, res) =>{
+    const postitions = await People.findAll({
+      attributes: ['position'],
+      group: 'position'
+    })
+    return res.json(postitions)
   })
   app.get('/products', async(req, res) =>{
     const products =await Product.findAll()
@@ -82,3 +96,4 @@ async function init() {
 init()
 
 export default app
+   

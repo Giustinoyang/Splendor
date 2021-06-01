@@ -1,17 +1,9 @@
 <template>
   <main class="container">
-    <div>
-      <h1>People in Our company</h1>
-      <section class="positionH">
-        <div
-          v-for="(position, positionid) of position"
-          :key="'art-' + positionid"
-          @click="goToArticle(`/position/${position.position}`)"
-        >
-        {{position.position}}
-        </div>
-      </section>
-    </div>
+    <header>
+      <h1>{{id}} of Our company</h1>
+      <h4>Best</h4>
+    </header>
     <section class="article-grid">
       <div
         v-for="(person, personid) of people"
@@ -37,14 +29,16 @@ export default {
   components: {
     ArticleMini,
   },
-  async asyncData({ app }) {
-    let [people, position] = await Promise.all([
-      app.$axios.$get(`${process.env.BASE_URL}/api/people`),
-      app.$axios.$get(`${process.env.BASE_URL}/api/positions`),
-    ])
+  async asyncData({ $axios, route }) {
+    const { id } = route.params
+    console.log('this url', process.env.BASE_URL)
+    const { data } = await $axios.get(
+      `${process.env.BASE_URL}/api/people/${id}`
+    )
+    const people = data
     return {
       people: people,
-      position: position,   
+      id:id,
     }
   },
   data() {
@@ -69,14 +63,6 @@ export default {
 <style scoped>
 h2 {
   margin-bottom: 30px;
-}
-.positionH {
-  grid-template-columns: repeat(3, calc(100% / 3));
-  display: grid;
-  grid-gap: 10px;
-  margin-top: 40px;
-  border: 1px solid grey;
-  border-radius: 100px;
 }
 .article-grid {
   display: grid;

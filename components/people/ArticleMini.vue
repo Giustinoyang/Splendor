@@ -5,6 +5,7 @@
     </div>
     <div class="card2">
         <h3>{{ title }}</h3>
+        <h4>{{position}}</h4>
         <p>{{summary}}</p>
     </div>
   </div>
@@ -16,6 +17,7 @@ export default {
     title: { type: String, default: () => '' },
     image: { type: String, default: () => '' },
     summary: { type: String, default: () => '' },
+    position: { type: String, default: () => ''},
   },
 }
 </script>

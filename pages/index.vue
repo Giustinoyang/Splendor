@@ -33,4 +33,10 @@ h4 {
 p {
   text-align: left;
 }
+img {
+  width: auto;
+  height: auto;
+  max-width: 50%;
+  max-height:50%;
+}
 </style>

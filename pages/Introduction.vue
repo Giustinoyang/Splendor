@@ -8,7 +8,7 @@
     <section>
       <h2>Introduction</h2>
       <p>
-        Moviri is a multinational consulting and software group of companies, which focuses on artificial intellegence, computer graphics, network, robotics, computer security and bigdata. We help customers harness the power of transformative technologies. We are top experts in performance engineering, analytics, and security etc.
+        Splendor is a multinational consulting and software company, which focuses on artificial intellegence, computer graphics, network, robotics, computer security and bigdata. We help customers harness the power of transformative technologies. We are top experts in performance engineering, analytics, and security etc.
       </p>
     </section>
   </main>
@@ -26,7 +26,10 @@ h4 {
   margin-bottom: 30px;
 }
 img {
-  max-width: 600px;
+  width: auto;
+  height: auto;
+  max-width: 50%;
+  max-height:50%;
 }
 p {
   text-align: left;
