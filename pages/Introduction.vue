@@ -3,18 +3,12 @@
     <header>
       <h1>Splendor</h1>
       <h4>And it's a wonderful company for you</h4>
-      <img src="~/static/owen.png" alt="Bot ADS" />
+      <img src="~/static/Splendor.png" height="400" width="80"/>
     </header>
     <section>
       <h2>Introduction</h2>
       <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-        veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-        commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-        velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
-        occaecat cupidatat non proident, sunt in culpa qui officia deserunt
-        mollit anim id est laborum
+        Moviri is a multinational consulting and software group of companies, which focuses on artificial intellegence, computer graphics, network, robotics, computer security and bigdata. We help customers harness the power of transformative technologies. We are top experts in performance engineering, analytics, and security etc.
       </p>
     </section>
   </main>

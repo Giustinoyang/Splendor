@@ -3,18 +3,17 @@
     <header>
       <h1>Splendor</h1>
       <h4>And it's a wonderful company for you</h4>
-      <img src="~/static/owen.png" alt="Bot ADS" />
+      <img src="~/static/Splendor.png" height="400" width="200"/>
     </header>
     <section>
       <h2>What's News</h2>
+      <h4>Splendor sucessfully help to maintain important network security</h4>
       <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-        veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-        commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-        velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
-        occaecat cupidatat non proident, sunt in culpa qui officia deserunt
-        mollit anim id est laborum
+        Splendor maintain important network security for our clients. This year we help our client success away from risk and hack. And report a emergency critical risk of infrastructure.
+      </p>
+      <h4>Flexible use of supervised machine learning</h4>
+      <p>
+        We utilize supervised machine learning techniques on player tracking data from the game of basketball to automatically discover relationships between player movement and offensive success.
       </p>
     </section>
   </main>
@@ -30,9 +29,6 @@ h2 {
 }
 h4 {
   margin-bottom: 30px;
-}
-img {
-  max-width: 600px;
 }
 p {
   text-align: left;

@@ -148,34 +148,7 @@ async function insertFakeData() {
   // Adding the second comment to the first article
   await firstArticle.addComment(comment2.id)
 
-  const people1 = await People.create({
-    name: 'people1',
-    overview: 'people1 overview',
-    details: 'people1 details',
-  })
-  const area1 = await Area.create({
-    title: 'area1',
-    overview: 'area1 overview',
-    details: 'area1 details',
-  })
-  const product1 = await Product.create({
-    title: 'product1',
-    overview: 'prduct1 overview',
-    details: 'product1 details',
-  })
-  const service1 = await Service.create({
-    title: 'service1',
-    overview: 'service1 overview',
-    details: 'service1 details',
-    case: 'service1 case',
-  })
-  await area1.addPeople(people1.id);
-  await area1.addProduct(product1.id);
-  await area1.addService(service1.id);
-  await people1.addProduct(product1.id);
-  await people1.addService(service1.id);
-
-
+  
   const ReginaBarzilay = await People.create({
     name: 'Regina Barzilay',
     image: '/people/ReginaBarzilay.png',
@@ -529,7 +502,7 @@ async function insertFakeData() {
     case: 'We utilize supervised machine learning techniques on player tracking data from the game of basketball to automatically discover relationships between player movement and offensive success.',
   })
 
-  await area1.addService(Supervised_Machine_Learning_Techniques);
+  await AI.addService(Supervised_Machine_Learning_Techniques);
   await AleksanderMądry.addService(Supervised_Machine_Learning_Techniques);
   await GeraldSussman.addService(Supervised_Machine_Learning_Techniques);
   await PeterSzolovits.addService(Supervised_Machine_Learning_Techniques);
@@ -571,7 +544,7 @@ async function insertFakeData() {
     overview: 'Robot assistants that can help you lift objects by mirroring motions and following nonverbal commands.',
     details: 'this project looks at the person`s muscle activity to inform the robot about how it should move to best assist the person while they collaborate.  By using the muscles already involved in performing the task, the robot could almost become like an extension of yourself that can be controlled intuitively.',
   })
-  await area1.addProduct(Muscle_Signals_And_Robots);
+  await Robotics.addProduct(Muscle_Signals_And_Robots);
   await RussTedrake.addProduct(Muscle_Signals_And_Robots);
   await PeterSzolovits.addProduct(Muscle_Signals_And_Robots);
   await DanielaRus.addProduct(Muscle_Signals_And_Robots);
