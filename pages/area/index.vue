@@ -1,7 +1,7 @@
 <template>
   <main class="container">
     <header>
-      <h1>Blog of the WebSite</h1>
+      <h1>AREA</h1>
       <h4>And it's made with Nuxt</h4>
     </header>
     <section class="article-grid">

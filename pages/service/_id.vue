@@ -3,6 +3,14 @@
     <header>
       <h1>{{ service.title }}</h1>
       <h4>{{ service.overview }}</h4>
+      <div
+        v-for="(people, peopleid) of service.people"
+        :key="'art-' + peopleid"
+        class='article'
+        @click="goToArticle(`/people/${people.id}`)"
+      >
+        {{people.name}}
+      </div>
       <img :src="service.image" :alt="service.overview" />
     </header>
     <article>
@@ -25,6 +33,11 @@ export default {
       service,
     }
   },
+  methods: {
+    goToArticle(path) {
+      this.$router.push({ path })
+    },
+  },
 }
 </script>
 
@@ -35,6 +48,10 @@ h4 {
 .comments {
   margin-top: 60px;
   text-align: left;
+}
+.article {
+  cursor: pointer;
+  margin-bottom: 20px;
 }
 .comment {
   padding: 20px;

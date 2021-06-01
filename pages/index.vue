@@ -15,6 +15,10 @@
       <p>
         We utilize supervised machine learning techniques on player tracking data from the game of basketball to automatically discover relationships between player movement and offensive success.
       </p>
+      <h4>Fastpasss is sucessfully used by Flowtune </h4>
+      <p>
+        Fastpass aims for high utilization with zero queueing. It provides low median and tail latencies for packets, high data rates between machines, and flexible network resource allocation policies. The key idea in Fastpass is fine-grained control over packet transmission times and network paths.Flowtune is developing network monitoring and scheduling based on principles derived from this work.
+      </p>
     </section>
   </main>
 </template>
@@ -25,10 +29,12 @@ export default {}
 
 <style scoped>
 h2 {
-  margin-bottom: 30px;
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
 h4 {
-  margin-bottom: 30px;
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
 p {
   text-align: left;

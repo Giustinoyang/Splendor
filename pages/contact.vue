@@ -34,10 +34,12 @@ export default {}
 
 <style scoped>
 h2 {
-  margin-bottom: 30px;
+    margin-top: 20px;
+  margin-bottom: 20px;
 }
 h4 {
-  margin-bottom: 30px;
+    margin-top: 20px;
+  margin-bottom: 20px;
 }
 img {
   width: auto;
@@ -46,6 +48,6 @@ img {
   max-height:50%;
 }
 p {
-  text-align: left;
+  text-align: middle;
 }
 </style>

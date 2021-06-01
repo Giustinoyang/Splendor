@@ -65,6 +65,7 @@ h4 {
 }
 .personD {
   white-space:nowrap;
+  cursor: pointer;
 }
 .comments {
   margin-top: 60px;
