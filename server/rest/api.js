@@ -45,6 +45,7 @@ async function init() {
     const { id } = req.params
     const people = await People.findOne({
       where: {id},
+      include:[Area,Product, Service],
     })
     return res.json(people)
   })
@@ -70,6 +71,7 @@ async function init() {
     const { id } = req.params
     const product = await Product.findOne({
       where: {id},
+      include: [People, Area],
     })
     return res.json(product)
   })

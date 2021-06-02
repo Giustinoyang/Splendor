@@ -4,6 +4,12 @@
       <h1>{{ service.title }}</h1>
       <h4>{{ service.overview }}</h4>
       <div
+        class='title'
+        @click="goToArticle(`/area/${service.area.id}`)"
+      >
+        {{service.area.title}}
+      </div>
+      <div
         v-for="(people, peopleid) of service.people"
         :key="'art-' + peopleid"
         class='article'
@@ -51,8 +57,21 @@ h4 {
 }
 .article {
   cursor: pointer;
+  font-size: 16px;
+  text-align: middle;
+  margin-top: 20px;
   margin-bottom: 20px;
 }
+.title{
+  cursor: pointer;
+  font-size: 20px;
+  text-align: middle;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  font-family: serif;
+  font-weight: bolder;
+  text-decoration:underline;
+  }
 .comment {
   padding: 20px;
   background: #f7f7f7;

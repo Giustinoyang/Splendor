@@ -7,7 +7,7 @@
        <div
         v-for="(person, personid) of area.people"
         :key="'art-' + personid"
-        class='personD'
+        class='article'
         @click="goToArticle(`/people/${person.id}`)"
         >
           {{person.name}}
@@ -22,7 +22,7 @@
       <div
         v-for="(product, productid) of area.products"
         :key="'art-' + productid"
-        class='personD'
+        class='article'
         @click="goToArticle(`/product/${product.id}`)"
         >
           {{product.title}}
@@ -30,7 +30,7 @@
       <div
         v-for="(service, serviceid) of area.services"
         :key="'art-' + serviceid"
-        class='personD'
+        class='article'
         @click="goToArticle(`/service/${service.id}`)"
         >
           {{service.title}}
@@ -88,4 +88,21 @@ p {
   text-align: left;
   margin-top: 40px;
 }
+.article {
+  cursor: pointer;
+  font-size: 16px;
+  text-align: middle;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+.title{
+  cursor: pointer;
+  font-size: 20px;
+  text-align: middle;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  font-family: serif;
+  font-weight: bolder;
+  text-decoration:underline;
+  }
 </style>

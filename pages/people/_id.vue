@@ -3,6 +3,30 @@
     <header>
       <h1>{{ person.name }}</h1>
       <h4>{{ person.overview }}</h4>
+      <div
+        v-for="(area, areaid) of person.areas"
+        :key="'art-' + areaid"
+        class='title'
+        @click="goToArticle(`/area/${area.id}`)"
+      >
+        {{area.title}}
+      </div>
+       <div
+        v-for="(product, productid) of person.products"
+        :key="'art-' + productid"
+        class='article'
+        @click="goToArticle(`/product/${product.id}`)"
+      >
+        {{product.title}}
+      </div>
+      <div
+        v-for="(service, serviceid) of person.services"
+        :key="'art-' + serviceid"
+        class='article'
+        @click="goToArticle(`/service/${service.id}`)"
+      >
+        {{service.title}}
+      </div>
       <img :src="person.image" :alt="person.overview" />
     </header>
     <article>
@@ -24,6 +48,11 @@ export default {
     return {
       person,
     }
+  },
+  methods: {
+    goToArticle(path) {
+      this.$router.push({ path })
+    },
   },
 }
 </script>
@@ -53,4 +82,21 @@ p {
   text-align: left;
   margin-top: 40px;
 }
+.article {
+  cursor: pointer;
+  font-size: 16px;
+  text-align: middle;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+.title{
+  cursor: pointer;
+  font-size: 20px;
+  text-align: middle;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  font-family: serif;
+  font-weight: bolder;
+  text-decoration:underline;
+  }
 </style>

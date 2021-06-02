@@ -66,8 +66,11 @@ h2 {
 }
 .article {
   cursor: pointer;
+  text-align: middle;
+  margin-top: 20px;
   margin-bottom: 20px;
 }
+
 .ad img {
   width: 100%;
   height: 200px;
