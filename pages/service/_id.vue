@@ -1,14 +1,30 @@
 <template>
   <section class="container">
     <header>
+      <div class='topbox'>
+       <a class='top' @click="goToArticle(`/Service`)">Service </a>
+       <a class='topbox'>-&gt; </a>
+       <a class='top'>{{service.title}}</a>
+      </div>
       <h1>{{ service.title }}</h1>
       <h4>{{ service.overview }}</h4>
+      <article>
+      <p>
+        {{ service.details }}
+      </p>
+      <p>
+        {{ service.case}}
+      </p>
+    </article>
+    <img :src="service.image" :alt="service.overview" />
+    <p>Service belongs to this area: </p>
       <div
         class='title'
         @click="goToArticle(`/area/${service.area.id}`)"
       >
         {{service.area.title}}
       </div>
+      <p>People who work for this service: </p>
       <div
         v-for="(people, peopleid) of service.people"
         :key="'art-' + peopleid"
@@ -17,17 +33,17 @@
       >
         {{people.name}}
       </div>
-      <img :src="service.image" :alt="service.overview" />
+      
     </header>
-    <article>
-      <p>
-        {{ service.details }}
-      </p>
-    </article>
+    
   </section>
 </template>
 <script>
+import ArticleMini from '~/components/people/ArticleMini.vue'
 export default {
+  components: {
+    ArticleMini,
+  },
   async asyncData({ $axios, route }) {
     const { id } = route.params
     console.log('this url', process.env.BASE_URL)
@@ -47,6 +63,7 @@ export default {
 }
 </script>
 
+
 <style scoped>
 h4 {
   margin: 30px 0;
@@ -59,6 +76,24 @@ h4 {
   cursor: pointer;
   font-size: 16px;
   text-align: middle;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+.top {
+  cursor: pointer;
+  color: black;
+  font-size: 20px;
+  text-align: left;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  font-weight: bolder;
+  text-decoration:underline;
+}
+.topbox{
+  cursor: pointer;
+  color: black;
+  font-size: 20px;
+  text-align: left;
   margin-top: 20px;
   margin-bottom: 20px;
 }

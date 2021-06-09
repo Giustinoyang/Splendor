@@ -14,7 +14,7 @@
         <article-mini
           :title="service.title"
           :summary="service.overview"
-          :image="service.image"
+          :image="service.image"     
         ></article-mini>
       </div>
     </section>

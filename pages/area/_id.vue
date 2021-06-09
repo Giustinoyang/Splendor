@@ -1,9 +1,21 @@
 <template>
   <section class="container">
     <header>
+      <div class='topbox'>
+       <a class='top' @click="goToArticle(`/area`)">Area </a>
+       <a class='topbox'>-&gt; </a>
+       <a class='top'>{{area.title}}</a>
+      </div>
       <h1>{{ area.title }}</h1>
-      <h4>{{ area.overview }}</h4>
-      <p>Working on: </p>
+      <h4>{{ area.overview }}</h4>     
+      
+      <img :src="area.image" :alt="area.overview" />
+      <p>
+        {{ area.details }}
+      </p>
+    </header>
+    <article>
+      <p>People who work in this area: </p>
        <div
         v-for="(person, personid) of area.people"
         :key="'art-' + personid"
@@ -12,13 +24,8 @@
         >
           {{person.name}}
         </div>
-      <img :src="area.image" :alt="area.overview" />
-    </header>
-    <article>
-      <p>
-        {{ area.details }}
-      </p>
-      <p>Product and Service: </p>
+      
+      <p>Products belong to this area: </p>
       <div
         v-for="(product, productid) of area.products"
         :key="'art-' + productid"
@@ -27,6 +34,7 @@
         >
           {{product.title}}
       </div>
+       <p>Services belong to this area: </p>
       <div
         v-for="(service, serviceid) of area.services"
         :key="'art-' + serviceid"
@@ -39,7 +47,11 @@
   </section>
 </template>
 <script>
+import ArticleMini from '~/components/people/ArticleMini.vue'
 export default {
+  components: {
+    ArticleMini,
+  },
   async asyncData({ $axios, route }) {
     const { id } = route.params
     console.log('this url', process.env.BASE_URL)
@@ -90,8 +102,27 @@ p {
 }
 .article {
   cursor: pointer;
+  color: black;
   font-size: 16px;
   text-align: middle;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+.top {
+  cursor: pointer;
+  color: black;
+  font-size: 20px;
+  text-align: left;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  font-weight: bolder;
+  text-decoration:underline;
+}
+.topbox{
+  cursor: pointer;
+  color: black;
+  font-size: 20px;
+  text-align: left;
   margin-top: 20px;
   margin-bottom: 20px;
 }

@@ -1,6 +1,11 @@
 <template>
   <section class="container">
     <header>
+       <div class='topbox'>
+       <a class='top' @click="goToArticle(`/people`)">People </a>
+       <a class='topbox'>-&gt; </a>
+       <a class='top'>{{person.name}}</a>
+      </div>
       <h1>{{ person.name }}</h1>
       <h4>{{ person.overview }}</h4>
       <div
@@ -11,6 +16,13 @@
       >
         {{area.title}}
       </div>
+      <article>
+      <p>
+        {{ person.details }}
+      </p>
+    </article>
+    <img :src="person.image" :alt="person.overview" />
+      <p>Products worked by this person: </p>
        <div
         v-for="(product, productid) of person.products"
         :key="'art-' + productid"
@@ -19,6 +31,7 @@
       >
         {{product.title}}
       </div>
+       <p>Services worked by this person: </p>
       <div
         v-for="(service, serviceid) of person.services"
         :key="'art-' + serviceid"
@@ -27,17 +40,17 @@
       >
         {{service.title}}
       </div>
-      <img :src="person.image" :alt="person.overview" />
+      
     </header>
-    <article>
-      <p>
-        {{ person.details }}
-      </p>
-    </article>
+    
   </section>
 </template>
 <script>
+import ArticleMini from '~/components/people/ArticleMini.vue'
 export default {
+  components: {
+    ArticleMini,
+  },
   async asyncData({ $axios, route }) {
     const { id } = route.params
     console.log('this url', process.env.BASE_URL)
@@ -81,6 +94,24 @@ img {
 p {
   text-align: left;
   margin-top: 40px;
+}
+.top {
+  cursor: pointer;
+  color: black;
+  font-size: 20px;
+  text-align: left;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  font-weight: bolder;
+  text-decoration:underline;
+}
+.topbox{
+  cursor: pointer;
+  color: black;
+  font-size: 20px;
+  text-align: left;
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
 .article {
   cursor: pointer;
