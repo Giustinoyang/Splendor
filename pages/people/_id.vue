@@ -4,10 +4,11 @@
        <div class='topbox'>
        <a class='top' @click="goToArticle(`/people`)">People </a>
        <a class='topbox'>-&gt; </a>
-       <a class='top'>{{person.name}}</a>
+       <a class='top' @click="goToArticle(`/people/${people.id}`)">{{person.name}}</a>
       </div>
       <h1>{{ person.name }}</h1>
       <h4>{{ person.overview }}</h4>
+      <p>People work in this area:</p>
       <div
         v-for="(area, areaid) of person.areas"
         :key="'art-' + areaid"
@@ -17,7 +18,7 @@
         {{area.title}}
       </div>
       <article>
-      <p>
+      <p class='article'>
         {{ person.details }}
       </p>
     </article>
@@ -94,6 +95,7 @@ img {
 p {
   text-align: left;
   margin-top: 40px;
+  white-space: pre-wrap;
 }
 .top {
   cursor: pointer;
@@ -106,7 +108,6 @@ p {
   text-decoration:underline;
 }
 .topbox{
-  cursor: pointer;
   color: black;
   font-size: 20px;
   text-align: left;
@@ -115,7 +116,7 @@ p {
 }
 .article {
   cursor: pointer;
-  font-size: 16px;
+  font-size: 18px;
   text-align: middle;
   margin-top: 20px;
   margin-bottom: 20px;

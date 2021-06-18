@@ -24,6 +24,8 @@
         info@splendor.com</p>
         <p>For partnerships<br/>
         partners@splendor.com</p>
+        <p>For careers and jobs<br/>
+        jobs@moviri.com</p>
     </section>
   </main>
 </template>

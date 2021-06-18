@@ -4,12 +4,12 @@
        <div class='topbox'>
        <a class='top' @click="goToArticle(`/product`)">Product</a>
        <a class='topbox'>-&gt; </a>
-       <a class='top'>{{product.title}}</a>
+       <a class='top' @click="goToArticle(`/people/${product.id}`)">{{product.title}}</a>
       </div>
       <h1>{{ product.title }}</h1>
       <h4>{{ product.overview }}</h4>
       <article>
-      <p>
+      <p class='article'>
         {{ product.details }}
       </p>
     </article>
@@ -97,7 +97,6 @@ p {
   text-decoration:underline;
 }
 .topbox{
-  cursor: pointer;
   color: black;
   font-size: 20px;
   text-align: left;
@@ -106,7 +105,7 @@ p {
 }
 .article {
   cursor: pointer;
-  font-size: 16px;
+  font-size: 18px;
   text-align: middle;
   margin-top: 20px;
   margin-bottom: 20px;

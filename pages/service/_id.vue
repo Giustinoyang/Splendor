@@ -4,15 +4,15 @@
       <div class='topbox'>
        <a class='top' @click="goToArticle(`/Service`)">Service </a>
        <a class='topbox'>-&gt; </a>
-       <a class='top'>{{service.title}}</a>
+       <a class='top' @click="goToArticle(`/people/${service.id}`)">{{service.title}}</a>
       </div>
       <h1>{{ service.title }}</h1>
       <h4>{{ service.overview }}</h4>
       <article>
-      <p>
+      <p class='article'>
         {{ service.details }}
       </p>
-      <p>
+      <p class='article'>
         {{ service.case}}
       </p>
     </article>
@@ -74,7 +74,7 @@ h4 {
 }
 .article {
   cursor: pointer;
-  font-size: 16px;
+  font-size: 18px;
   text-align: middle;
   margin-top: 20px;
   margin-bottom: 20px;
@@ -90,7 +90,6 @@ h4 {
   text-decoration:underline;
 }
 .topbox{
-  cursor: pointer;
   color: black;
   font-size: 20px;
   text-align: left;
