@@ -3,6 +3,7 @@
         <div class="home-menu pure-menu pure-menu-horizontal">
             <a class="pure-menu-heading" href="">Splendor</a>
             <ul class="pure-menu-list">
+                <li class="pure-menu-item" img src="~/static/Splendor.png" height="200" width="100"/>
                 <li class="pure-menu-item"><a href="/" class="pure-menu-link">Home</a></li>
                 |
                 <li class="pure-menu-item"><a href="#" class="pure-menu-link">Careers</a></li>

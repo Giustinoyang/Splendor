@@ -3,7 +3,6 @@
     <header>
       <h1>Splendor</h1>
       <h4>And it's a wonderful company for you</h4>
-      <img src="~/static/Splendor.png" height="400" width="200"/>
     </header>
     <section>
       <h2>What's News</h2>

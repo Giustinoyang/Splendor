@@ -3,7 +3,7 @@
     <header>
       <h1>Splendor</h1>
       <h4>And it's a wonderful company for you</h4>
-      <img src="~/static/Splendor.png" />
+      <img src = "~/static/Splendor.png"/>
     </header>
     <section>
       <h2>Introduction</h2>
@@ -28,8 +28,8 @@ h4 {
 img {
   width: auto;
   height: auto;
-  max-width: 50%;
-  max-height:50%;
+  max-width: 30%;
+  max-height:30%;
 }
 p {
   text-align: left;

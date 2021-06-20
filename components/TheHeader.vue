@@ -2,12 +2,16 @@
   <header class="header">
     <div class="header-content">
       <nav class="first">
+        <img src="~/static/Splendor.png"/>&nbsp; 
         <div
           v-for="(title, titleIndex) of titleOptions"
           :key="'menu-item-' + titleIndex"
           class="menu-item"
         >
           <nuxt-link :to="title.path">
+            <div v-if="title.name===PLENDOR">
+              <img src="~/static/Splendor.png"/>
+            </div>
             {{ title.name }}
           </nuxt-link>
           &nbsp;&nbsp;|&nbsp;&nbsp;
@@ -34,6 +38,13 @@ export default {
   data() {
     return {
       menuOptions: [
+        
+      ],
+      titleOptions: [
+        {
+          name: 'PLENDOR',
+          path: '/',
+        },
         {
           name: 'Introduction',
           path: '/introduction',
@@ -53,12 +64,6 @@ export default {
         {
           name: 'People',
           path: '/people',
-        },
-      ],
-      titleOptions: [
-        {
-          name: 'SPLENDOR',
-          path: '/',
         },
         {
           name: 'Career',
@@ -82,6 +87,9 @@ export default {
   display: flex;
   justify-content: space-between;
   line-height: 200%;
+  position: fixed;
+  width: 100%;
+  top: 0;
 }
 .header-content {
   width: 100%;
@@ -103,5 +111,11 @@ export default {
 .first {
   display: flex;
   align-items: flex-start;
+}
+img {
+  width: auto;
+  height: auto;
+  max-width: 2.5%;
+  max-height:2.5%;
 }
 </style>

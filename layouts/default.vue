@@ -1,7 +1,9 @@
 <template>
   <div>
     <the-header></the-header>
-    <Nuxt />
+    <div class="mainpart">
+      <Nuxt />
+    </div>
   </div>
 </template>
 
@@ -25,6 +27,9 @@ html {
 *::after {
   box-sizing: border-box;
   margin: 0;
+}
+.mainpart {
+  padding-top: 70px;
 }
 .container {
   padding: 10px;

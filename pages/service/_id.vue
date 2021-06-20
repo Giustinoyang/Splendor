@@ -2,17 +2,17 @@
   <section class="container">
     <header>
       <div class='topbox'>
-       <a class='top' @click="goToArticle(`/Service`)">Service </a>
+       <a class='top' @click="goToArticle(`/service`)">Service </a>
        <a class='topbox'>-&gt; </a>
-       <a class='top' @click="goToArticle(`/people/${service.id}`)">{{service.title}}</a>
+       <a class='top' @click="goToArticle(`/service/${service.id}`)">{{service.title}}</a>
       </div>
       <h1>{{ service.title }}</h1>
       <h4>{{ service.overview }}</h4>
       <article>
-      <p class='article'>
+      <p class='articleMain'>
         {{ service.details }}
       </p>
-      <p class='article'>
+      <p class='articleMain'>
         {{ service.case}}
       </p>
     </article>
@@ -74,6 +74,13 @@ h4 {
 }
 .article {
   cursor: pointer;
+  font-size: 18px;
+  text-align: middle;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+.articleMain{
+  color: black;
   font-size: 18px;
   text-align: middle;
   margin-top: 20px;

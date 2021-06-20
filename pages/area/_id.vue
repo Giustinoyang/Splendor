@@ -10,7 +10,7 @@
       <h4>{{ area.overview }}</h4>     
       
       <img :src="area.image" :alt="area.overview" />
-      <p class='article'>
+      <p class='articleMain'>
         {{ area.details }}
       </p>
     </header>
@@ -102,6 +102,13 @@ p {
 }
 .article {
   cursor: pointer;
+  color: black;
+  font-size: 18px;
+  text-align: middle;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+.articleMain{
   color: black;
   font-size: 18px;
   text-align: middle;

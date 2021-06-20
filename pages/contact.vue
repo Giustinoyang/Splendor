@@ -3,7 +3,6 @@
     <header>
       <h1>Contact</h1>
       <h4>And it's a wonderful company for you</h4>
-     <img src="~/static/Splendor.png" height="300" width="100"/>
     </header>
     <section>
       <h2>Our offices</h2>

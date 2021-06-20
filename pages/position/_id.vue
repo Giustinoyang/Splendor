@@ -1,8 +1,22 @@
 <template>
   <main class="container">
     <header>
-      <h1>{{id}} of Our company</h1>
-      <h4>Best</h4>
+      <h1>{{id}} of our company</h1>
+     <section class="positionH">
+        <div
+          v-for="(position, positionid) of position"
+          :key="'art-' + positionid"
+          class="posList"
+          @click="goToArticle(`/position/${position.position}`)"
+        >
+        <div v-if="position.position === id">
+          <b>{{position.position}}</b>
+        </div>
+        <div v-else>
+          {{position.position}}
+        </div>
+        </div>
+      </section>
     </header>
     <section class="article-grid">
       <div
@@ -35,10 +49,14 @@ export default {
     const { data } = await $axios.get(
       `${process.env.BASE_URL}/api/people/${id}`
     )
+    let [position] = await Promise.all([
+      $axios.$get(`${process.env.BASE_URL}/api/positions`),
+    ])
     const people = data
     return {
       people: people,
       id:id,
+      position:  position,
     }
   },
   data() {
@@ -70,9 +88,20 @@ h2 {
   grid-gap: 10px;
   margin-top: 40px;
 }
+.positionH {
+  grid-template-columns: repeat(3, calc(100% / 3));
+  display: grid;
+  grid-gap: 10px;
+  margin-top: 40px;
+  border: 1px solid grey;
+  border-radius: 100px;
+}
 .article {
   cursor: pointer;
   margin-bottom: 20px;
+}
+.posList {
+  cursor: pointer;
 }
 .ad img {
   width: 100%;

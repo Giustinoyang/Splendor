@@ -6,6 +6,7 @@
         <div
           v-for="(position, positionid) of position"
           :key="'art-' + positionid"
+          class="posList"
           @click="goToArticle(`/position/${position.position}`)"
         >
         {{position.position}}
@@ -83,6 +84,9 @@ h2 {
   grid-template-columns: repeat(1, calc(100% / 1));
   grid-gap: 10px;
   margin-top: 40px;
+}
+.posList {
+  cursor: pointer;
 }
 .article {
   cursor: pointer;
