@@ -8,7 +8,7 @@
     <section>
       <h2>Introduction</h2>
       <p>
-        Splendor is a multinational consulting and software company, which focuses on artificial intellegence, computer graphics, network, robotics, computer security and bigdata. We help customers harness the power of transformative technologies. We are top experts in performance engineering, analytics, and security etc.
+        Splendor is a multinational consulting and software company, which focuses on artificial intellegence, computer graphics, network, robotics, computer security and bigdata. We help customers harness the power of transformative technologies. We are top experts in performance engineering, analytics, and security etc.We use data, software, and insights to solve our customers' most substantial technology challenges.
       </p>
     </section>
   </main>
