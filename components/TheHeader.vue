@@ -10,19 +10,7 @@
           @click="goToArticle(title.path)"
         >
           <a class = "button">{{ title.name }}</a>
-          &nbsp;&nbsp;|&nbsp;&nbsp;
-        </div>
-      </nav>
-      <nav class="right">
-        <div
-          v-for="(item, itemIndex) of menuOptions"
-          :key="'menu-item-' + itemIndex"
-          class="menu-item"
-        >
-          <nuxt-link :to="item.path">
-            {{ item.name }}
-          </nuxt-link>
-          &nbsp;&nbsp;|
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         </div>
       </nav>
     </div>
@@ -40,10 +28,6 @@ export default {
         {
           name: 'PLENDOR',
           path: '/',
-        },
-        {
-          name: 'Introduction',
-          path: '/introduction',
         },
         {
           name: 'Area',

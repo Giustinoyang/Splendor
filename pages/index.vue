@@ -3,8 +3,13 @@
     <header>
       <h1>Splendor</h1>
       <h4>And it's a wonderful company for you</h4>
+        <img src = "~/static/Splendor.png"/>
     </header>
     <section>
+      <h2>Introduction</h2>
+      <p>
+        Splendor is a multinational consulting and software company, which focuses on artificial intellegence, computer graphics, network, robotics, computer security and bigdata. We help customers harness the power of transformative technologies. We are top experts in performance engineering, analytics, and security etc.We use data, software, and insights to solve our customers' most substantial technology challenges.
+      </p>
       <h2>What's News</h2>
        <img class= "box1" src = "~/static/news/news1.png"/>
        <div class="box2">
@@ -99,7 +104,7 @@ p {
 img {
   width: auto;
   height: auto;
-  max-width: 50%;
-  max-height:50%;
+  max-width: 30%;
+  max-height:30%;
 }
 </style>
