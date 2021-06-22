@@ -1,19 +1,15 @@
 <template>
   <header class="header">
     <div class="header-content">
-      <nav class="first">
-        <img src="~/static/Splendor.png"/>&nbsp; 
+      <nav class="first"> 
+        <img class="button" @click="goToArticle(`/`)" src="~/static/Splendor.png"/>
         <div
           v-for="(title, titleIndex) of titleOptions"
           :key="'menu-item-' + titleIndex"
           class="menu-item"
+          @click="goToArticle(title.path)"
         >
-          <nuxt-link :to="title.path">
-            <div v-if="title.name===PLENDOR">
-              <img src="~/static/Splendor.png"/>
-            </div>
-            {{ title.name }}
-          </nuxt-link>
+          <a class = "button">{{ title.name }}</a>
           &nbsp;&nbsp;|&nbsp;&nbsp;
         </div>
       </nav>
@@ -76,6 +72,11 @@ export default {
       ],
     }
   },
+  methods: {
+    goToArticle(path) {
+      this.$router.push({ path })
+    },
+  },
 }
 </script>
 
@@ -91,10 +92,17 @@ export default {
   width: 100%;
   top: 0;
 }
+.button {
+  cursor: pointer;
+}
 .header-content {
   width: 100%;
   max-width: 800px;
   margin: auto;
+}
+.menu-item {
+  display: flex;
+  text-align: center;
 }
 .right {
   display: flex;

@@ -25,6 +25,7 @@ export default {
   float: left;
   width: 30%;
   height: 180px;
+  font-size: 24px;
 }
 .card2 {
   padding: 20px 10px;
@@ -33,6 +34,7 @@ export default {
   float: right;
   width: 60%;
   height: 180px;
+  font-size: 18px;
 }
 h3 {
   position: relative;

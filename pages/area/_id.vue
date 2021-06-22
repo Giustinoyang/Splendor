@@ -74,6 +74,7 @@ export default {
 <style scoped>
 h4 {
   margin: 30px 0;
+  font-size: 18px;
 }
 .personD {
   white-space:nowrap;

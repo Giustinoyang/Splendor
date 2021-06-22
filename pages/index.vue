@@ -34,6 +34,13 @@
           With the growth of automated, scalable frameworks, such as Kubernetes, hosted on flexible (hybrid) cloud or AWS, Azure, and GCP, many IT organizations have concluded that capacity planning as we know it has completed its mission. We sucessfully held assumptions about infrastructure capacity in the cloud and the five essential steps to a successful cloud-native capacity management implementation. 
         </p>
       </div>
+       <img class= "box1" src = "~/static/news/news5.png"/>
+       <div class="box2">   
+      <h4>VOO TV+ Upgrades UX with Splendor </h4>
+      <p>
+        Splendor and VOO worked closely to implement the next generation of VOO’s front-end experience, introducing advanced AI capabilities built into the Splendor UX Engine machine learning platform, supporting the migration of current use cases and the addition of a range of new use cases to improve VOO’s subscribers’ user experience. After a successful pilot test, VOO is now rolling out the new service, VOO TV+,  across its entire television customers.  
+      </p>
+      </div>
     </section>
   </main>
 </template>

@@ -21,6 +21,7 @@ export default {}
 <style scoped>
 h2 {
   margin-bottom: 30px;
+  font-size: 24px;
 }
 h4 {
   margin-bottom: 30px;
@@ -33,5 +34,6 @@ img {
 }
 p {
   text-align: left;
+  font-size: 20px;
 }
 </style>
