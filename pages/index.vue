@@ -61,47 +61,48 @@ h1 {
   font-family: "Lucida Handwriting", "Lucida Console","Courier New", monospace;
 }
 .box1{
-  max-width:30%;
+  max-width:35%;
   text-align: left;
   height: 250px;
   float: left;
-  margin-top: 20px;
-  margin-bottom: 20px;
+  margin-top: 40px;
+  margin-bottom: 70px;
 }
 .box2{
-  max-width:60%;
+  max-width:55%;
   text-align: right;
-  height: 250px;
+  height: 300px;
   float: right;
-  margin-top: 20px;
-  margin-bottom: 20px;
+  margin-top: 30px;
+  margin-bottom: 30px;
 }
 
 .box3{
-  max-width:30%;
+  max-width:35%;
   text-align: right;
   height: 250px;
   float: right;
-  margin-top: 20px;
-  margin-bottom: 20px;
+  margin-top: 40px;
+  margin-bottom: 70px;
 }
 .box4{
-  max-width:60%;
+  max-width:55%;
   text-align: left;
-  height: 250px;
+  height: 300px;
   float: left;
-  margin-top: 20px;
-  margin-bottom: 20px;
+  margin-top: 30px;
+  margin-bottom: 30px;
 }
 h2 {
   margin-top: 40px;
   margin-bottom: 40px;
+  font-size: 35px;
 }
 h4 {
   margin-top: 20px;
   margin-bottom: 20px;
   text-align: center;
-  font-size: 20px;
+  font-size: 25px;
 }
 p {
   text-align: center;

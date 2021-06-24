@@ -1,10 +1,10 @@
 <template>
-  <dev class="bottom">
+  <footer class="bottom">
     <dev class="bottom-content">
         <h2>Splendor</h2>
         <p>The Best Company You Have Ever Known.</p>
     </dev>
-  </dev>
+  </footer>
 </template>
 
 <script>

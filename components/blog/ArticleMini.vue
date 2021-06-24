@@ -29,7 +29,7 @@ export default {
   background:	#3567C5;
   color: white;
   margin-top: 80px;
-  margin-bottom: 80px;
+  margin-bottom: 60px;
   }
 
 .card2 {
@@ -40,7 +40,8 @@ export default {
   width: 60%;
   height: 250px;
   font-size: 20px;
-  margin-bottom: 40px;
+  margin-top: 30px;
+  margin-bottom: 50px;
 }
 h3 {
   position: relative;
