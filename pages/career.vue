@@ -2,7 +2,7 @@
   <main class="container">
     <header>
       <h1>Career</h1>
-      <h4>And it's a wonderful company for you</h4>
+      <p>And it's a wonderful company for you</p>
     </header>
     <section>
       <h2>Offer Jobs</h2>
@@ -15,8 +15,8 @@
         <p>Master’s Degree in Computer Science, Data Science and Engineering, Statistic or similar; <br/>
         Proven Python programming ability; <br/>
         Confidence with ML frameworks and libraries like Tensorflow, Numpy, Keras. <br/>
-        Understanding of software architectures and performance concerns; Documentation and technical writing skills;<br/>
-        Fluent in English.
+        Understanding of software architectures and performance concerns;<br/>
+        Documentation and technical writing skills; Fluent in English.
         </p>
         <h3>Security Analysis</h3>
       <h4>Job Description</h4>
@@ -39,11 +39,27 @@ export default {}
 </script>
 
 <style scoped>
+h1 {
+  font-size: 50px;
+  font-weight: bolder;
+  font-family: "Lucida Handwriting", "Lucida Console","Courier New", monospace;
+}
 h2 {
+  font-size: 40px;
+  font-weight: bolder;
   margin-bottom: 30px;
+  color:#3567C5;
+}
+h3{
+  margin-top: 40px;
+  font-size: 30px;
+  font-weight: bolder;
+  color:#3567C5;
 }
 h4 {
+  font-size: 25px;
   margin-bottom: 30px;
+  color:#3567C5;
 }
 img {
   width: auto;
@@ -52,6 +68,8 @@ img {
   max-height:50%;
 }
 p {
-  text-align: left;
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 18px;
 }
 </style>

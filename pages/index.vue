@@ -1,7 +1,7 @@
 <template>
   <main class="container">
     <header>
-      <h1>Splendor</h1>
+      <h1>SPLENDOR</h1>
       <h4>And it's a wonderful company for you</h4>
         <img src = "~/static/Splendor.png"/>
     </header>
@@ -55,10 +55,15 @@ export default {}
 </script>
 
 <style scoped>
+h1 {
+  font-size: 50px;
+  font-weight: bolder;
+  font-family: "Lucida Handwriting", "Lucida Console","Courier New", monospace;
+}
 .box1{
   max-width:30%;
   text-align: left;
-  height: 200px;
+  height: 250px;
   float: left;
   margin-top: 20px;
   margin-bottom: 20px;
@@ -66,7 +71,7 @@ export default {}
 .box2{
   max-width:60%;
   text-align: right;
-  height: 200px;
+  height: 250px;
   float: right;
   margin-top: 20px;
   margin-bottom: 20px;
@@ -75,7 +80,7 @@ export default {}
 .box3{
   max-width:30%;
   text-align: right;
-  height: 200px;
+  height: 250px;
   float: right;
   margin-top: 20px;
   margin-bottom: 20px;
@@ -83,28 +88,32 @@ export default {}
 .box4{
   max-width:60%;
   text-align: left;
-  height: 200px;
+  height: 250px;
   float: left;
   margin-top: 20px;
   margin-bottom: 20px;
 }
 h2 {
-  margin-top: 20px;
-  margin-bottom: 20px;
+  margin-top: 40px;
+  margin-bottom: 40px;
 }
 h4 {
   margin-top: 20px;
   margin-bottom: 20px;
   text-align: center;
+  font-size: 20px;
 }
 p {
-  text-align: left;
   text-align: center;
+  font-size: 18px;
+  margin-bottom: 20px;
 }
 img {
   width: auto;
   height: auto;
   max-width: 30%;
   max-height:30%;
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
 </style>

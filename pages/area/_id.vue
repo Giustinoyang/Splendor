@@ -13,17 +13,28 @@
       <p class='articleMain'>
         {{ area.details }}
       </p>
+      <div
+        v-for="(subArea, subAreaid) of area.subAreas"
+        :key="'sub-' + subAreaid"
+        class='subArea'
+      >
+        <div class="subcard">
+          <img :src="subArea.image" class="subimg"/>
+          <h2>{{subArea.title}}</h2>
+          <p>{{subArea.details}}</p>
+        </div>
+      </div>
     </header>
     <article>
       <p>People who work in this area: </p>
-       <div
+      <div
         v-for="(person, personid) of area.people"
         :key="'art-' + personid"
         class='article'
         @click="goToArticle(`/people/${person.id}`)"
         >
           {{person.name}}
-        </div>
+      </div>
       
       <p>Products belong to this area: </p>
       <div
@@ -43,8 +54,11 @@
         >
           {{service.title}}
       </div>
+      
     </article>
   </section>
+
+    
 </template>
 <script>
 import ArticleMini from '~/components/people/ArticleMini.vue'
@@ -76,6 +90,24 @@ h4 {
   margin: 30px 0;
   font-size: 18px;
 }
+.container {
+  width: 100%
+}
+.subArea {
+  padding: 20px 10px;
+  display: inline;
+  color: black;
+  font-size: 18px;
+  text-align: middle;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+.subcard {
+  max-width: 40%;
+  display: inline-block;
+  margin-left: 3%;
+  margin-right: 3%;
+}
 .personD {
   white-space:nowrap;
   cursor: pointer;
@@ -97,6 +129,12 @@ h4 {
 img {
   max-width: 600px;
 }
+.subimg {
+  width: auto;
+  height: auto;
+  max-width: 20%;
+  max-height:20%;
+}
 p {
   text-align: left;
   margin-top: 40px;
@@ -108,6 +146,7 @@ p {
   text-align: middle;
   margin-top: 20px;
   margin-bottom: 20px;
+  width: 100%;
 }
 .articleMain{
   color: black;

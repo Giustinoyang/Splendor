@@ -2,7 +2,7 @@ const { Sequelize, DataTypes } = require('sequelize')
 
 // Development
 const db = new Sequelize(
-  'postgres://postgres:950423@127.0.0.1:5432/postgres'
+  'postgres://postgres:123456@127.0.0.1:5432/postgres'
 )
 // Production
 //const pg = require('pg')
@@ -35,6 +35,16 @@ function defineDatabaseStructure() {
       title: DataTypes.STRING,
       image: DataTypes.STRING,
       overview: DataTypes.TEXT,
+      details: DataTypes.TEXT,
+    },
+    {
+      underscored: true,
+    }
+  )
+  const SubArea = db.define(
+    'subArea',{
+      image: DataTypes.STRING,
+      title: DataTypes.STRING,
       details: DataTypes.TEXT,
     },
     {
@@ -77,6 +87,8 @@ function defineDatabaseStructure() {
   Product.belongsToMany(People, {through: 'PeopleProduct'});
   People.belongsToMany(Service, {through: 'PeopleService'});
   Service.belongsToMany(People, {through: 'PeopleService'});
+  Area.hasMany(SubArea);
+  SubArea.belongsTo(Area);
 
   const Article = db.define(
     'article',
@@ -113,6 +125,7 @@ function defineDatabaseStructure() {
     People,
     Product,
     Service,
+    SubArea,
   }
 }
 
@@ -120,7 +133,7 @@ function defineDatabaseStructure() {
  * Function to insert some fake info in the database
  */
 async function insertFakeData() {
-  const { Article, Comment, Area, People, Product, Service } = db._tables
+  const { Article, Comment, Area, People, Product, Service, SubArea } = db._tables
   // Create the first Article
   const firstArticle = await Article.create({
     title: 'Such good article',
@@ -238,63 +251,63 @@ async function insertFakeData() {
     image: '/people/DanielaRus.png',
     position: 'teamleader',
     overview: 'My research interests are in robotics, mobile computing, and data science.',
-    details: 'We aim to develop the science of autonomy toward a future with robots and AI systems integrated into everyday life, supporting people with cognitive and physical tasks.',
+    details: 'We aim to develop the science of autonomy toward a future with robots and AI systems integrated into everyday life, supporting people with cognitive and physical tasks. I imagine a future where robots are so integrated in the fabric of human life that they become as common as smart phones are today. The field of robotics has the potential to greatly improve the quality of our lives at work, at home and at play. \n\n I also focus in to soft robot. Soft robots have a continuously deformable structure with muscle-like actuation that emulates biological systems and results in a relatively large number of degrees of freedom as compared to their hard-bodied counterparts. Soft robots have the potential to exhibit unprecedented adaptation, sensitivity, and agility. Soft bodied robots promise to 1) Move with the ability to bend and twist with high curvatures and thus can be used in confined spaces; 2) Deform their bodies in a continuous way and thus achieve motions that emulate biology; 3) Adapt their shape to the environment employing compliant motion and thus manipulate un-modeled objects, or move on rough terrain and exhibit resilience; 4) Execute rapid, agile maneuvers, such as the escape maneuver in fish. We are developing new design, fabrication, modeling, control, and planning algorithms for soft robots. ',
   })
   const JoachimBuhmann = await People.create({
     name: 'Joachim Buhmann',
     image: '/people/JoachimBuhmann.png',
     position: 'engineer',
     overview: 'My team interests cover the area of pattern recognition and data analysis.',
-    details: 'I am interested in statistical learning theory and applied statistics. The application areas range from computer vision and image analysis, remote sensing to bioinformatics.',
+    details: 'I am interested in statistical learning theory and applied statistics. The application areas range from computer vision and image analysis, remote sensing to bioinformatics.\n\n I have developed a new graphics algorithm that can help deal with the pollution problem. Microplastics pollution has been recognized as a serious environmental concern, with research efforts underway to determine primary causes. Experiments typically generate bright-field images of microplastic fibers that are filtered from water. Environmental decision making in process engineering critically relies on accurate quantification of mi-croplastic fibers in these images. To satisfy the required standards, images are often analyzed manually, resulting in a highly tedious process, with thousands of fiber instances per image. While the shape of individual fibers is relatively simple, it is difficult to separate them in highly crowded scenes with significant overlap. We propose a fiber instance detection pipeline, which decomposes the fiber detection and segmentation into manageable sub-problems. Well separated instances are identified with robust image processing techniques, such as adaptive thresholding, and morphological skeleton analysis, while tangled fibers are separated by an algorithm based on deep pixel embeddings. Moreover, we present a modified Intersection-over-Union metric as a more appropriate similarity metric for elongated shapes. Our approach improves significantly on out-of-sample data, in particular for difficult cases of intersecting fibers.',
   })
   const MengjiaYan = await People.create({
     name: 'Mengjia Yan',
     image: '/people/MengjiaYan.png',
     position: 'engineer',
     overview: 'I am intersted in computer architecture and security.',
-    details: 'My team interest lies in the areas of computer architecture and security, with a focus on side channel attacks and defenses. My group works on exploiting new micro-architectural vulnerabilities and designing comprehensive and efficient defense mechanisms.',
+    details: 'My team interest lies in the areas of computer architecture and security, with a focus on side channel attacks and defenses. My group works on exploiting new micro-architectural vulnerabilities and designing comprehensive and efficient defense mechanisms. we propose a novel Spectre gadget detection technique by enabling dynamic taintc analysis on speculative execution paths.\n\n Software patching is a crucial mitigation approach against Spectre-type attacks. It utilizes serialization instructions to disable speculative execution of potential Spectre gadgets in a program. To this end, we simulate and explore speculative execution at system level (within a CPU emulator). We have implemented a prototype called SpecTaint to demonstrate the efficacy of our proposed approach. We evaluated SpecTaint on our Spectre Samples Dataset, and compared SpecTaint with existing state-of-the-art Spectre gadget detection approaches on real-world applications. Our experimental results demonstrate that SpecTaint outperforms existing methods with respect to detection precision and recall by large margins, and it also detects new Spectre gadgets in real-world applications such as Caffe and Brotli. Besides, SpecTaint significantly reduces the performance overhead after patching the detected gadgets, compared with other approaches.',
   })
   const AlanWillsky = await People.create({
     name: 'Alan Willsky',
     image: '/people/AlanWillsky.png',
     position: 'engineer',
     overview: 'My interests is about multiresolution methods for large-scale data.',
-    details: 'My recently work on multiresolution methods for large-scale data fusion and assimilation. This method can be used in fields including target tracking, object recognition, fusion of nontraditional data sources, oil exploration, oceanographic remote sensing. ',
+    details: 'My recently work on multiresolution methods for large-scale data fusion and assimilation. This method can be used in fields including target tracking, object recognition, fusion of nontraditional data sources, oil exploration, oceanographic remote sensing. \n\n Now i deal with the 2 nearest-neighbor models. The solution and linear estimation of 2-0 nearest-neighbor models (NNMs) are considered. The class of problems that can be described by NNMs is quite large, as models of this type arise whenever partial differential equations are discretized with finitedifference methods. A general solution technique is proposed for 2-0 NNMs that relies on converting the system into an equivalent I-D two-point boundary-value descriptor system (TPBVDS) of large dimension, for which a recursive and stable solution technique is developed. Under slightly restrictive assumptions, an even faster procedure can be obtained by using the Fast-Fourier Transform (FFT), with respect to one of the space dimensions, to convert the I-D TPBVDS into a set of decoupled TPBVDSs of low order, which can be solved in parallel. The smoothing problem for 2-0 random fields described by stochastic NNMs is then examined. The smoother is expressed as a Hamiltonian system of twice the dimension of the original system, and is also in NNM form. NNM solution techniques are therefore directly applicable to this smoother.  ',
   })
   const RussTedrake = await People.create({
     name: 'Russ Tedrake',
     image: '/people/RussTedrake.png',
     position: 'engineer',
     overview: 'I am interested in underactuated motor control systems in animals and machines. ',
-    details: 'I am interested in underactuated motor control systems in animals and machines that are capable of executing dynamically dexterous tasks and interacting with uncertain environments. We believe that the design of these control systems is intimately related to the mechanical designs of their machines, and that tools from machine learning and optimal control can be used to exploit this coupling when classical control techniques fail.',
+    details: 'I am interested in underactuated motor control systems in animals and machines that are capable of executing dynamically dexterous tasks and interacting with uncertain environments. We believe that the design of these control systems is intimately related to the mechanical designs of their machines, and that tools from machine learning and optimal control can be used to exploit this coupling when classical control techniques fail. \n\n Nowadays, our team focus on predictive models. Predictive models have been at the core of many robotic systems, from quadrotors to walking robots. However, it has been challenging to develop and apply such models to practical robotic manipulation due to high-dimensional sensory observations such as images. Previous approaches to learning models in the context of robotic manipulation have either learned whole image dynamics or used autoencoders to learn dynamics in a low-dimensional latent state. In this work, we introduce model-based prediction with self-supervised visual correspondence learning, and show that not only is this indeed possible, but demonstrate that these types of predictive models show compelling performance improvements over alternative methods for vision-based RL with autoencoder-type vision training. Through simulation experiments, we demonstrate that our models provide better generalization precision, particularly in 3D scenes, scenes involving occlusion, and in category-generalization. Additionally, we validate that our method effectively transfers to the real world through hardware experiments.',
   })
   const  PeterSzolovits = await People.create({
     name: ' Peter Szolovits',
     image: '/people/PeterSzolovits.png',
     position: 'engineer',
     overview: 'My job center on the application of AI methods.',
-    details: 'My job center on the application of AI methods to problems of medical decision making, predictive modeling, decision support, and design of information systems for health care institutions and patients. He has worked on problems of diagnosis, therapy planning, execution and monitoring for various medical conditions, computational aspects of genetic counseling, controlled sharing of health information, and privacy and confidentiality issues in medical record systems.',
+    details: 'My job center on the application of AI methods to problems of medical decision making, predictive modeling, decision support, and design of information systems for health care institutions and patients. I worked on problems of diagnosis, therapy planning, execution and monitoring for various medical conditions, computational aspects of genetic counseling, controlled sharing of health information, and privacy and confidentiality issues in medical record systems. \n\n My team also focus on the combination of medicine and artificial intelligence. Computer programs are increasingly being called on to suggest or to make decisions in medical applications. Traditional methods of decision making based on flowcharts and probabilistic classification have proven to be too cumbersome to apply to large domains. As a result, programs employing artificial intelligence methods were introduced. Deficiencies in those methods limited the capabilities of the resulting programs and suggested many research problems now being pursued in medical AI.',
   })
   const GeraldSussman = await People.create({
     name: 'Gerald Sussman',
     image: '/people/GeraldSussman.png',
     position: 'teamleader',
-    overview: 'My work about Artificial Intelligence',
-    details: 'My work about Artificial Intelligence include problem solving by debugging almost-right plans, propagation of constraints applied to electrical circuit analysis and synthesis, dependency-based explanation and dependency-based backtracking, and various language structures for expressing problem-solving strategies.',
+    overview: 'My work about Artificial Intelligence and computer structure.',
+    details: 'My work about Artificial Intelligence include problem solving by debugging almost-right plans, propagation of constraints applied to electrical circuit analysis and synthesis, dependency-based explanation and dependency-based backtracking, and various language structures for expressing problem-solving strategies. /n/n Artificial Intelligence is the study of ideas which enable computers to do the things that make people seem intelligent . The central goals of Artificial Intelligence are to make computers more useful and to understand the principles which make intelligence possible. This is a rather straightforward definition, but it embodies certain assumptions about the idea of intelligence and the relationship between human reasoning and computation which are, in some circles, quite controversial. The coupling of the study of how to make computers useful with the study of the principles which underlie human intelligence clearly implies that the researcher expects the two to be related. Indeed, in the newly-developing field of cognitive science, computer models of thought are explicitly used to describe human capabilities.',
   })
   const RonaldRivest = await People.create({
     name: 'Ronald Rivest',
     image: '/people/RonaldRivest.png',
     position: 'CEO',
-    overview: 'I am familiar about computer security-cryptographic',
-    details: 'i have extensive experience in cryptographic design and cryptanalysis. Familiar in RSA public-key cryptosystem. My work extensively in the areas of algorithms and election security.',
+    overview: 'I am familiar about computer security-cryptographic. And I have extensive experience in cryptographic design and cryptanalysis.',
+    details: ' I am familiar in RSA public-key cryptosystem. My work extensively in the areas of algorithms and election security. \n\n My research focus on RC encryption algorithm a fast symmetric block cipher suitable for hardware or software imple mentations. A novel feature of RC is the heavy use of data dependent rotations. RC has a variable word size a variable number of rounds and a variable length secret key. The encryption and decryption algorithms are exceptionally simple. \n\n RSA (Rivest–Shamir–Adleman) is a public-key cryptosystem that is widely used for secure data transmission. In a public-key cryptosystem, the encryption key is public and distinct from the decryption key, which is kept secret (private). An RSA user creates and publishes a public key based on two large prime numbers, along with an auxiliary value. The prime numbers are kept secret. Messages can be encrypted by anyone, via the public key, but can only be decoded by someone who knows the prime numbers. The security of RSA relies on the practical difficulty of factoring the product of two large prime numbers, the "factoring problem". Breaking RSA encryption is known as the RSA problem. Whether it is as difficult as the factoring problem is an open question. There are no published methods to defeat the system if a large enough key is used.',
   })
   const  JonathanRaganKelley = await People.create({
     name: ' Jonathan Ragan Kelley',
     image: '/people/JonathanRaganKelley.png',
     position: 'teamleader',
-    overview:'I am interested in computer graphic.',
-    details: 'My work focuses on high-efficiency computer graphics, at the intersection of graphics with systems, architecture, and compilers.',
+    overview:'I am interested in computer graphic. My work focuses on high-efficiency computer graphics, at the intersection of graphics with systems, architecture, and compilers.',
+    details: 'Gradient-based optimization has enabled dramatic advances in computational imaging through techniques like deep learning and nonlinear optimization. These methods require gradients not just of simple mathematical functions, but of general programs which encode complex transformations of images and graphical data. Unfortunately, practitioners have traditionally been limited to either hand-deriving gradients of complex computations, or composing programs from a limited set of coarse-grained operators in deep learning frameworks. At the same time, writing programs with the level of performance needed for imaging and deep learning is prohibitively difficult for most programmers. \n\n We extend the image processing language Halide with general reversemode automatic differentiation (AD), and the ability to automatically optimize the implementation of gradient computations. This enables automatic computation of the gradients of arbitrary Halide programs, at high performance, with little programmer effort. A key challenge is to structure the gradient code to retain parallelism. We define a simple algorithm to automatically schedule these pipelines, and show how Halide’s existing scheduling primitives can express and extend the key AD optimization of "checkpointing."',
   })
 
 
@@ -765,6 +778,156 @@ async function insertFakeData() {
   await PeterSzolovits.addProduct(Drones_that_Drive);
   await DanielaRus.addProduct(Drones_that_Drive);
   await StefanieJegelka.addProduct(Drones_that_Drive);
+
+  const Security_Operations = await SubArea.create({
+    title: 'Security Operations',
+    image: '/subarea/security1.png',
+    details: 'We develop advanced cybersecurity use cases and design and implement analytics dashboards. We also build risk-based response automation solutions and help customers implement their SIEM and SOAR platforms.'
+  })
+  await Security.addSubArea (Security_Operations);
+
+  const Fraud_Detection = await SubArea.create({
+    title: 'Fraud Detection',
+    image: '/subarea/security2.png',
+    details: 'The rapid growth of digital payments and the introduction of PSD2 change the landscape and the complexity of the attacks. We offer specialized services and technology for fraud detection, prevention, and countermeasures.'
+  })
+  await Security.addSubArea (Fraud_Detection);
+
+  const  Digital_Identity =  await SubArea.create({
+    title:'Digital Identity',
+    image:'/subarea/security3.png',
+    details:'Comprehensive identity & access management solutions to protect critical digital assets, for access management and to protect data in transit, on the cloud and on-prem.',
+  })
+  await Security.addSubArea (Digital_Identity);
+
+  
+  const Cloud_Security  =  await SubArea.create({
+    title:'Cloud Security',
+    image:'/subarea/security4.png',
+    details:'We offer a range of products and consulting services to secure and protect private and public cloud-native infrastructure and applications.',
+  })
+  await Security.addSubArea (Cloud_Security);
+  
+  const Design_Validation =  await SubArea.create({
+    title:'Design Validation',
+    image:'/subarea/robotics1.png',
+    details:'Our design and validation services help companies build high-performance robots. We are experts in performance testing and tuning, autoscaling, and right-sizing, from evaluation to implementation.',
+  })
+  await Robotics.addSubArea (Design_Validation);
+  
+  const Self_Driving =  await SubArea.create({
+    title:'Self Driving',
+    image:'/subarea/robotics2.png',
+    details:'We have built a distinct expertise in self-driving operations in production, such as AIOps, dynamic optimization, chaos testing, canary deployment and self-remediation, automatic discovery and real-time service mapping.',
+  })
+  await Robotics.addSubArea (Self_Driving);
+  
+  const Observability =  await SubArea.create({
+    title:'Observability',
+    image:'/subarea/robotics3.png',
+    details:'The entire range of IT operations as they relate to engineering: monitoring, digital performance management, end-user experience management, IT performance analytics and visualization.',
+  })
+  await Robotics.addSubArea (Observability);
+  
+  const  Control =  await SubArea.create({
+    title:'Control',
+    image:'/subarea/robotics4.png',
+    details:'We use a engineering approach to solve the IT cost equation, helping customers with their capacity planning and management processes, IT resource utilization accounting, chargeback and cost controls.',
+  })
+  await Robotics.addSubArea (Control);
+  
+  const Network_Consulting  =  await SubArea.create({
+    title:'Network Consulting',
+    image:'/subarea/network1.png',
+    details:'With our consulting services, we work with customers to understand and unlock the value of IoT. We also help identify and refine business use cases, then create the technology blueprint with the selection of the IoT stack including hardware, software and cloud services.',
+  })
+  await Network.addSubArea (Network_Consulting);
+
+  const Network_Security  =  await SubArea.create({
+    title:'Network Security',
+    image:'/subarea/network2.png',
+    details:'We collaborate with our security team to guarantee the reliability and safety of IoT products. Our end-to-end security approaches start from securing physical devices against tampering, implement advanced cryptography, and build-in in proper security governance.',
+  })
+  await Network.addSubArea (Network_Security);
+
+  const Network_Analytics  =  await SubArea.create({
+    title:'Network Analytics',
+    image:'/subarea/network3.png',
+    details:'We help customers derive maximum value from the enormous amount of data generated by IoT. We develop solutions to automate processes and inform business decisions, applying AI-on-edge approaches that optimize the IoT architecture and operativity.',
+  })
+  await Network.addSubArea (Network_Analytics);
+
+  const End_to_End_System  =  await SubArea.create({
+    title:'End to End System',
+    image:'/subarea/network4.png',
+    details:'We build enterprise IoT systems integrating a vast network of sensors and smart devices combined with advanced analytics and cloud services. We cover the entire life cycle from the design phase to the setup and maintenance of the solution. We develop custom software or deploy packaged software that best serves the project goal.',
+  })
+  await Network.addSubArea (End_to_End_System);
+
+  const Data_Engineering  =  await SubArea.create({
+    title:'Data Engineering',
+    image:'/subarea/bigdata1.png',
+    details:'Unique capabilities in the entire spectrum of data engineering, including cloud and hybrid big data architectures, data pipelines, data quality, NoSQL and streaming systems.',
+  })
+  await BigData.addSubArea (Data_Engineering);
+
+  const Data_Science  =  await SubArea.create({
+    title:'Data Science',
+    image:'/subarea/bigdata2.png',
+    details:'The combination of data science and research expertise. Machine learning applications in computer vision, NLP, recommender systems, forecasting. network science, BI, and visualization.',
+  })
+  await BigData.addSubArea (Data_Science);
+
+  const MLOps  =  await SubArea.create({
+    title:'MLOps',
+    image:'/subarea/bigdata3.png',
+    details:'Deployment and maintenance of ML tools in operations, Closed loop Analytics, lift-and-shift continuous evolution at enterprise scale. On traditional, cloud and edge architecture.',
+  })
+  await BigData.addSubArea (MLOps);
+
+  const Quantum_AI  =  await SubArea.create({
+    title:'Quantum AI',
+    image:'/subarea/network4.png',
+    details:'Designing, implementing and deploying AI algorithms and applications to solve complex analytics problems using Quantum Computing. Quantum computing adoption advisory.',
+  })
+  await BigData.addSubArea (Quantum_AI);
+
+  
+  const Plotting  =  await SubArea.create({
+    title:'Plotting',
+    image:'/subarea/graphic1.png',
+    details:'We have a graphical data analysis and plotting package for scientists and engineers.  Designed to meet the requirements of serious researchers unafraid of command line oriented programs. Our collaborators and friends have convinced our platform is very useful.',
+  })
+  await Graphics.addSubArea (Plotting);
+
+  const Design  =  await SubArea.create({
+    title:'Design',
+    image:'/subarea/graphic2.png',
+    details:'Computer graphic design services for printed circuit boards (PCBs). Various types of circuit board design include digital, analog, radio frequency (RF), through-hole, power optimization, and surface mount.',
+  })
+  await Graphics.addSubArea (Design);
+
+  const Data_Process  =  await SubArea.create({
+    title:'Data_Process',
+    image:'/subarea/AI1.png',
+    details:'It refers to the techniques where a human supported by a machine is trying to extract information and insights from data. This includes predictive models on the higher level.',
+  })
+  await AI.addSubArea (Data_Process);
+
+  const Machine_Learning  =  await SubArea.create({
+    title:'Machine Learning',
+    image:'/subarea/AI2.png',
+    details:'It is the science of creating algorithms and programs able to learn on their own on the basis of heterogeneous data sources such as systems, things and humans.',
+  })
+  await AI.addSubArea (Machine_Learning);
+
+  const Artificial_Intelligence  =  await SubArea.create({
+    title:'Artificial Intelligence',
+    image:'/subarea/AI3.png',
+    details:'It is the study of how to create intelligent agents. In practice, it is how to program a computer to behave and perform a task as an intelligent agent (say, a person) would.',
+  })
+  await AI.addSubArea (Artificial_Intelligence);
+
 
 
 

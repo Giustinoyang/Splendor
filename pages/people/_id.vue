@@ -74,6 +74,7 @@ export default {
 <style scoped>
 h4 {
   margin: 30px 0;
+  font-size: 20px;
 }
 .comments {
   margin-top: 60px;
@@ -96,6 +97,7 @@ p {
   text-align: left;
   margin-top: 40px;
   white-space: pre-wrap;
+  font-size: 20px;
 }
 .top {
   cursor: pointer;

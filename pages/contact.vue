@@ -5,7 +5,7 @@
       <h4>And it's a wonderful company for you</h4>
     </header>
     <section>
-      <h2>Our offices</h2>
+      <h2>Our Offices</h2>
       <h3>Italy</h3>
       <p>
         Via Schiaffino, 11<br/>
@@ -19,12 +19,12 @@
         T: +1 617 936 0212
       </p>
       <h2>Emails</h2>
-      <p>For general enquiries<br/>
-        info@splendor.com</p>
-        <p>For partnerships<br/>
-        partners@splendor.com</p>
-        <p>For careers and jobs<br/>
-        jobs@moviri.com</p>
+      <h3>For general enquiries</h3>
+        <p>info@splendor.com</p>
+        <h3>For partnerships</h3>
+        <p>partners@splendor.com</p>
+        <h3>For careers and jobs</h3>
+        <p>jobs@splendor.com</p>
     </section>
   </main>
 </template>
@@ -34,13 +34,29 @@ export default {}
 </script>
 
 <style scoped>
+h1 {
+  font-size: 50px;
+  font-weight: bolder;
+  font-family: "Lucida Handwriting", "Lucida Console","Courier New", monospace;
+}
 h2 {
+    margin-top: 40px;
+    margin-bottom: 20px;
+    font-size: 35px;
+    color:black  ;
+    font-weight: bolder;
+}
+h3 {
     margin-top: 20px;
-  margin-bottom: 20px;
+    margin-bottom: 20px;
+    font-size: 25px;
+    color: #3567C5;
 }
 h4 {
     margin-top: 20px;
-  margin-bottom: 20px;
+    margin-bottom: 20px;
+    font-size: 18px;
+  
 }
 img {
   width: auto;
@@ -50,5 +66,7 @@ img {
 }
 p {
   text-align: middle;
+  font-size: 18px;
+  color: #3567C5;
 }
 </style>

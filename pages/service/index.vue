@@ -1,7 +1,7 @@
 <template>
   <main class="container">
     <header>
-      <h1>Blog of the WebSite</h1>
+      <h1>SERVICE</h1>
       <h4>And it's made with Nuxt</h4>
     </header>
     <section class="article-grid">
@@ -55,6 +55,11 @@ export default {
 </script>
 
 <style scoped>
+h1 {
+  font-size: 50px;
+  font-weight: bolder;
+  font-family: "Lucida Handwriting", "Lucida Console","Courier New", monospace;
+}
 h2 {
   margin-bottom: 30px;
 }

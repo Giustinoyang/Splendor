@@ -87,6 +87,8 @@ export default {
 .menu-item {
   display: flex;
   text-align: center;
+  font-size: 20px;
+  font-weight:bolder;
 }
 .right {
   display: flex;
@@ -107,7 +109,7 @@ export default {
 img {
   width: auto;
   height: auto;
-  max-width: 2.5%;
-  max-height:2.5%;
+  max-width: 5%;
+  max-height:5%;
 }
 </style>

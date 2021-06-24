@@ -14,7 +14,7 @@
       </p>
     </article>
        <img :src="product.image" />
-      <p>Service belongs to this area: </p>
+      <p>Product belongs to this area: </p>
       
       <div
         class='title'
