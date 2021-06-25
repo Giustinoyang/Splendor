@@ -2,8 +2,8 @@ export default {
   ssr: true,
   target: 'server',
   env: {
-    //BASE_URL: 'https://test-polimi.herokuapp.com', // Production URL
-    BASE_URL: '', // Development URL
+    BASE_URL: 'https://splendor-yang-li.herokuapp.com', // Production URL
+    //BASE_URL: '', // Development URL
   },
   serverMiddleware: [
     {
