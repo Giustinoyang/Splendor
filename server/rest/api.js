@@ -74,6 +74,8 @@ async function init() {
   })
 }
 
+app.listen(PORT || 3000)
+
 init()
 
 export default app
