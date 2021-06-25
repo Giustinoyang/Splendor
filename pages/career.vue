@@ -5,7 +5,7 @@
       <h4>And it's a wonderful company for you</h4>
     </header>
     <div>
-      <table border=0 style=＂margin-bottom:200px＂>
+      <table border=0>
       <tr>
       <td width = 45%>
         <h3>Our bar is high</h3>
@@ -18,7 +18,7 @@
       </tr>
       </table>
 
-      <table border = 0>
+      <table border = 0 style="padding:50px">
         <tr>
           <td width = 20%>
            <h1> 98% </h1>
