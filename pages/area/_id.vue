@@ -2,15 +2,15 @@
   <section class="container">
     <header>
       <div class='topbox'>
-       <a class='top' @click="goToArticle(`/area`)">Area </a>
+       <a class='top' @click="goToArea(`/area`)">Area </a>
        <a class='topbox'>-&gt; </a>
-       <a class='top' @click="goToArticle(`/area/${area.id}`)">{{area.title}}</a>
+       <a class='top' @click="goToArea(`/area/${area.id}`)">{{area.title}}</a>
       </div>
       <h1>{{ area.title }}</h1>
       <h3>{{ area.overview }}</h3>     
       
       <img :src="area.image" :alt="area.overview" />
-      <p class='articleMain'>
+      <p class='areaMain'>
         {{ area.details }}
       </p>
       <div
@@ -25,13 +25,13 @@
         </div>
       </div>
     </header>
-    <article>
+    <areaShow>
       <h4>People who work in this area: </h4>
       <div
         v-for="(person, personid) of area.people"
         :key="'art-' + personid"
-        class='article'
-        @click="goToArticle(`/people/${person.id}`)"
+        class='areaShow'
+        @click="goToArea(`/people/${person.id}`)"
         >
           {{person.name}}
       </div>
@@ -40,8 +40,8 @@
       <div
         v-for="(product, productid) of area.products"
         :key="'art-' + productid"
-        class='article'
-        @click="goToArticle(`/product/${product.id}`)"
+        class='areaShow'
+        @click="goToArea(`/product/${product.id}`)"
         >
           {{product.title}}
       </div>
@@ -49,22 +49,20 @@
       <div
         v-for="(service, serviceid) of area.services"
         :key="'art-' + serviceid"
-        class='article'
-        @click="goToArticle(`/service/${service.id}`)"
+        class='areaShow'
+        @click="goToArea(`/service/${service.id}`)"
         >
           {{service.title}}
       </div>
       
-    </article>
+    </areaShow>
   </section>
 
     
 </template>
 <script>
-import ArticleMini from '~/components/people/ArticleMini.vue'
 export default {
   components: {
-    ArticleMini,
   },
   async asyncData({ $axios, route }) {
     const { id } = route.params
@@ -78,7 +76,7 @@ export default {
     }
   },
   methods: {
-    goToArticle(path) {
+    goToArea(path) {
       this.$router.push({ path })
     },
   },
@@ -103,7 +101,7 @@ h4{
   color:#3567C5;
   text-align: left;
 }
-.article {
+.areaShow {
   cursor: pointer;
   font-size: 20px;
   text-align: middle;
@@ -112,8 +110,9 @@ h4{
   font-family: serif;
   font-weight: bolder;
   text-decoration:underline;
+  color: black;
+  width: 100%;
 }
-
 .title{
   cursor: pointer;
   font-size: 20px;
@@ -174,16 +173,7 @@ p {
   text-align: left;
   margin-top: 40px;
 }
-.article {
-  cursor: pointer;
-  color: black;
-  font-size: 18px;
-  text-align: middle;
-  margin-top: 20px;
-  margin-bottom: 20px;
-  width: 100%;
-}
-.articleMain{
+.areaMain{
   color: black;
   font-size: 18px;
   text-align: middle;

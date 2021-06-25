@@ -2,25 +2,25 @@
   <section class="container">
     <header>
       <div class='topbox'>
-       <a class='top' @click="goToArticle(`/service`)">Service </a>
+       <a class='top' @click="goToService(`/service`)">Service </a>
        <a class='topbox'>-&gt; </a>
-       <a class='top' @click="goToArticle(`/service/${service.id}`)">{{service.title}}</a>
+       <a class='top' @click="goToService(`/service/${service.id}`)">{{service.title}}</a>
       </div>
       <h1>{{ service.title }}</h1>
       <h3>{{ service.overview }}</h3>
-      <article>
-      <p class='articleMain'>
+      <service>
+      <p class='serviceMain'>
         {{ service.details }}
       </p>
-      <p class='articleMain'>
+      <p class='serviceMain'>
         {{ service.case}}
       </p>
-    </article>
+    </service>
     <img :src="service.image" :alt="service.overview" />
     <h4>Service belongs to this area: </h4>
       <div
         class='title'
-        @click="goToArticle(`/area/${service.area.id}`)"
+        @click="goToService(`/area/${service.area.id}`)"
       >
         {{service.area.title}}
       </div>
@@ -28,8 +28,8 @@
       <div
         v-for="(people, peopleid) of service.people"
         :key="'art-' + peopleid"
-        class='article'
-        @click="goToArticle(`/people/${people.id}`)"
+        class='service'
+        @click="goToService(`/people/${people.id}`)"
       >
         {{people.name}}
       </div>
@@ -39,10 +39,8 @@
   </section>
 </template>
 <script>
-import ArticleMini from '~/components/people/ArticleMini.vue'
 export default {
   components: {
-    ArticleMini,
   },
   async asyncData({ $axios, route }) {
     const { id } = route.params
@@ -56,7 +54,7 @@ export default {
     }
   },
   methods: {
-    goToArticle(path) {
+    goToService(path) {
       this.$router.push({ path })
     },
   },
@@ -82,7 +80,7 @@ h4{
   color:#3567C5;
   text-align: left;
 }
-.article {
+.service {
   cursor: pointer;
   font-size: 20px;
   text-align: middle;
@@ -108,7 +106,7 @@ h4{
   text-align: left;
 }
 
-.articleMain{
+.serviceMain{
   color: black;
   font-size: 18px;
   text-align: middle;

@@ -4,17 +4,17 @@
     <div class="mainpart">
       <Nuxt />
     </div>
-    <bottom></bottom>
+    <the-bottom></the-bottom>
   </div>
 </template>
 
 <script>
 import TheHeader from '~/components/TheHeader.vue'
-import Bottom from '~/components/TheBottom.vue'
+import TheBottom from '~/components/TheBottom.vue'
 export default {
   components: {
     TheHeader,
-    Bottom,
+    TheBottom,
   },
 }
 </script>

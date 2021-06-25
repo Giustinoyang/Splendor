@@ -1,5 +1,5 @@
 <template>
-  <div class="article-mini">
+  <div class="people-card">
     <div class="card">
         <div class="img" :style="{ 'background-image': `url(${image})` }"></div>
     </div>
@@ -44,7 +44,6 @@ h4{
   float: right;
   width: 60%;
   height: 180px;
-  
 }
 p {
   text-align: center;
@@ -52,7 +51,6 @@ p {
   top: 50%; 
   transform: translateY(-50%);
 }
-
 .img {
   width: auto;
   height: 100%;
@@ -62,9 +60,5 @@ p {
   background-position: center;
   background-repeat: no-repeat;
   border-radius: 4px;
-}
-.overv {
-  overflow:hidden;
-  text-overflow:ellipsis;
 }
 </style>

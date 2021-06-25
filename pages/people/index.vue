@@ -7,36 +7,35 @@
           v-for="(position, positionid) of position"
           :key="'art-' + positionid"
           class="posList"
-          @click="goToArticle(`/position/${position.position}`)"
+          @click="goToPeople(`/people/position/${position.position}`)"
         >
         {{position.position}}
         </div>
       </section>
     </div>
-    <section class="article-grid">
+    <section class="people-grid">
       <div
         v-for="(person, personid) of people"
         :key="'art-' + personid"
-        class="article"
-        @click="goToArticle(`/people/${person.id}`)"
+        class="people"
+        @click="goToPeople(`/people/${person.id}`)"
       >
-        <article-mini
+        <people-card
           :title="person.name"
           :summary="person.overview"
           :image="person.image"
           :position="person.position"
-        ></article-mini>
+        ></people-card>
       </div>
     </section>
   </main>
 </template>
 
 <script>
-import axios from 'axios'
-import ArticleMini from '~/components/people/ArticleMini.vue'
+import PeopleCard from '~/components/listCard/peopleCard.vue'
 export default {
   components: {
-    ArticleMini,
+    PeopleCard,
   },
   async asyncData({ app }) {
     let [people, position] = await Promise.all([
@@ -53,14 +52,8 @@ export default {
       adUrl: '',
     }
   },
-  mounted() {
-    setTimeout(async () => {
-      const { data } = await axios.get('/api/ad')
-      this.adUrl = data.url
-    }, 1000)
-  },
   methods: {
-    goToArticle(path) {
+    goToPeople(path) {
       this.$router.push({ path })
     },
   },
@@ -86,7 +79,7 @@ h2 {
   border: 1px solid grey;
   border-radius: 100px;
 }
-.article-grid {
+.people-grid {
   display: grid;
   grid-template-columns: repeat(1, calc(100% / 1));
   grid-gap: 10px;
@@ -95,22 +88,8 @@ h2 {
 .posList {
   cursor: pointer;
 }
-.article {
+.people {
   cursor: pointer;
   margin-bottom: 20px;
-}
-.ad img {
-  width: 100%;
-  height: 200px;
-}
-@media screen and (max-width: 600px) {
-  .ad img {
-    width: 100%;
-    height: 100px;
-  }
-  .article-grid {
-    display: block;
-    margin: 40px 20px;
-  }
 }
 </style>

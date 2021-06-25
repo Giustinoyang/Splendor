@@ -2,23 +2,23 @@
   <section class="container">
     <header>
        <div class='topbox'>
-       <a class='top' @click="goToArticle(`/product`)">Product</a>
+       <a class='top' @click="goToProduct(`/product`)">Product</a>
        <a class='topbox'>-&gt; </a>
-       <a class='top' @click="goToArticle(`/product/${product.id}`)">{{product.title}}</a>
+       <a class='top' @click="goToProduct(`/product/${product.id}`)">{{product.title}}</a>
       </div>
       <h1>{{ product.title }}</h1>
       <h3>{{ product.overview }}</h3>
-      <article>
-      <p class='articleMain'>
+      <product>
+      <p class='productMain'>
         {{ product.details }}
       </p>
-    </article>
+    </product>
        <img :src="product.image" />
       <h4>Product belongs to this area: </h4>
       
       <div
         class='title'
-        @click="goToArticle(`/area/${product.area.id}`)"
+        @click="goToProduct(`/area/${product.area.id}`)"
       >
         {{product.area.title}}
       </div>
@@ -26,8 +26,8 @@
       <div
         v-for="(people, peopleid) of product.people"
         :key="'art-' + peopleid"
-        class='article'
-        @click="goToArticle(`/people/${people.id}`)"
+        class='product'
+        @click="goToProduct(`/people/${people.id}`)"
       >
         {{people.name}}
       </div>
@@ -37,10 +37,8 @@
   </section>
 </template>
 <script>
-import ArticleMini from '~/components/people/ArticleMini.vue'
 export default {
   components: {
-    ArticleMini,
   },
   async asyncData({ $axios, route }) {
     const { id } = route.params
@@ -54,7 +52,7 @@ export default {
     }
   },
   methods: {
-    goToArticle(path) {
+    goToProduct(path) {
       this.$router.push({ path })
     },
   },
@@ -113,14 +111,14 @@ p {
   margin-top: 20px;
   margin-bottom: 20px;
 }
-.articleMain{
+.productMain{
   color: black;
   font-size: 18px;
   text-align: middle;
   margin-top: 20px;
   margin-bottom: 20px;
 }
-.article {
+.product {
   cursor: pointer;
   font-size: 20px;
   text-align: middle;

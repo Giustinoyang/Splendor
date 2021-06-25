@@ -2,12 +2,12 @@
   <header class="header">
     <div class="header-content">
       <nav class="first"> 
-        <img class="button" @click="goToArticle(`/`)" src="~/static/Splendor.png"/>
+        <img class="button" @click="goToTag(`/`)" src="~/static/Splendor.png"/>
         <div
           v-for="(title, titleIndex) of titleOptions"
           :key="'menu-item-' + titleIndex"
           class="menu-item"
-          @click="goToArticle(title.path)"
+          @click="goToTag(title.path)"
         >
           <a class = "button">{{ title.name }}</a>
           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -57,7 +57,7 @@ export default {
     }
   },
   methods: {
-    goToArticle(path) {
+    goToTag(path) {
       this.$router.push({ path })
     },
   },
@@ -91,18 +91,6 @@ export default {
   font-size: 20px;
   font-weight:bolder;
 }
-.right {
-  display: flex;
-  justify-content: space-between;
-  width: 100%;
-  margin: auto;
-  max-width: 50%;
-  text-align: center;
-}
-.title {
-  font-size: 1.3rem;
-  margin-bottom: 5px;
-}
 .first {
   display: flex;
   align-items: flex-start;
@@ -110,7 +98,7 @@ export default {
 img {
   width: auto;
   height: auto;
-  max-width: 5%;
-  max-height:5%;
+  max-width: 3%;
+  max-height:3%;
 }
 </style>

@@ -1,5 +1,5 @@
 <template>
-  <div class="article-mini">
+  <div class="normal-card">
     <div class="card">
       <h3>{{ title }}</h3>
     </div>
@@ -54,20 +54,5 @@ p {
   position: relative;
   top: 50%; 
   transform: translateY(-50%);
-}
-
-.img {
-  width: 100%;
-  height: 200px;
-  max-width: 600px;
-  margin: auto;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  margin-bottom: 40px;
-}
-.overv {
-  overflow:hidden;
-  text-overflow:ellipsis;
 }
 </style>

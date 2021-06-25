@@ -4,29 +4,28 @@
       <h1>SERVICE</h1>
       <h4>And it's made with Nuxt</h4>
     </header>
-    <section class="article-grid">
+    <section class="service-grid">
       <div
         v-for="(service, serviceid) of services"
         :key="'art-' + serviceid"
-        class="article"
-        @click="goToArticle(`/service/${service.id}`)"
+        class="service"
+        @click="goToService(`/service/${service.id}`)"
       >
-        <article-mini
+        <normal-card
           :title="service.title"
           :summary="service.overview"
           :image="service.image"     
-        ></article-mini>
+        ></normal-card>
       </div>
     </section>
   </main>
 </template>
 
 <script>
-import axios from 'axios'
-import ArticleMini from '~/components/blog/ArticleMini.vue'
+import NormalCard from '~/components/listCard/normalCard.vue'
 export default {
   components: {
-    ArticleMini,
+    NormalCard,
   },
   async asyncData({ $axios }) {
     const { data } = await $axios.get(`${process.env.BASE_URL}/api/services`)
@@ -40,14 +39,8 @@ export default {
       adUrl: '',
     }
   },
-  mounted() {
-    setTimeout(async () => {
-      const { data } = await axios.get('/api/ad')
-      this.adUrl = data.url
-    }, 1000)
-  },
   methods: {
-    goToArticle(path) {
+    goToService(path) {
       this.$router.push({ path })
     },
   },
@@ -63,28 +56,14 @@ h1 {
 h2 {
   margin-bottom: 30px;
 }
-.article-grid {
+.service-grid {
   display: grid;
   grid-template-columns: repeat(1, calc(100% / 1));
   grid-gap: 10px;
   margin-top: 40px;
 }
-.article {
+.service {
   cursor: pointer;
   margin-bottom: 20px;
-}
-.ad img {
-  width: 100%;
-  height: 200px;
-}
-@media screen and (max-width: 600px) {
-  .ad img {
-    width: 100%;
-    height: 100px;
-  }
-  .article-grid {
-    display: block;
-    margin: 40px 20px;
-  }
 }
 </style>

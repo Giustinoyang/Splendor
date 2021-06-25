@@ -7,7 +7,7 @@
           v-for="(position, positionid) of position"
           :key="'art-' + positionid"
           class="posList"
-          @click="goToArticle(`/position/${position.position}`)"
+          @click="goToposition(`/people/position/${position.position}`)"
         >
         <div v-if="position.position === id">
           <b>{{position.position}}</b>
@@ -18,30 +18,29 @@
         </div>
       </section>
     </header>
-    <section class="article-grid">
+    <section class="position-grid">
       <div
         v-for="(person, personid) of people"
         :key="'art-' + personid"
-        class="article"
-        @click="goToArticle(`/people/${person.id}`)"
+        class="position"
+        @click="goToposition(`/people/${person.id}`)"
       >
-        <article-mini
+        <people-card
           :title="person.name"
           :summary="person.overview"
           :image="person.image"
           :position="person.position"
-        ></article-mini>
+        ></people-card>
       </div>
     </section>
   </main>
 </template>
 
 <script>
-import axios from 'axios'
-import ArticleMini from '~/components/people/ArticleMini.vue'
+import PeopleCard from '~/components/listCard/peopleCard.vue'
 export default {
   components: {
-    ArticleMini,
+    PeopleCard,
   },
   async asyncData({ $axios, route }) {
     const { id } = route.params
@@ -64,14 +63,8 @@ export default {
       adUrl: '',
     }
   },
-  mounted() {
-    setTimeout(async () => {
-      const { data } = await axios.get('/api/ad')
-      this.adUrl = data.url
-    }, 1000)
-  },
   methods: {
-    goToArticle(path) {
+    goToposition(path) {
       this.$router.push({ path })
     },
   },
@@ -83,7 +76,7 @@ export default {
 h2 {
   margin-bottom: 30px;
 }
-.article-grid {
+.position-grid {
   display: grid;
   grid-template-columns: repeat(1, calc(100% / 1));
   grid-gap: 10px;
@@ -97,26 +90,12 @@ h2 {
   border: 1px solid grey;
   border-radius: 100px;
 }
-.article {
+.position {
   cursor: pointer;
   margin-bottom: 20px;
 }
 .posList {
   cursor: pointer;
   font-size: 18px;
-}
-.ad img {
-  width: 100%;
-  height: 200px;
-}
-@media screen and (max-width: 600px) {
-  .ad img {
-    width: 100%;
-    height: 100px;
-  }
-  .article-grid {
-    display: block;
-    margin: 40px 20px;
-  }
 }
 </style>

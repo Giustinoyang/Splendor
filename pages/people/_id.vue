@@ -2,33 +2,33 @@
   <section class="container">
     <header>
        <div class='topbox'>
-       <a class='top' @click="goToArticle(`/people`)">People </a>
+       <a class='top' @click="goToPeople(`/people`)">People </a>
        <a class='topbox'>-&gt; </a>
-       <a class='top' @click="goToArticle(`/people/${person.id}`)">{{person.name}}</a>
+       <a class='top' @click="goToPeople(`/people/${person.id}`)">{{person.name}}</a>
       </div>
       <h1>{{ person.name }}</h1>
       <h3>{{ person.overview }}</h3>
       <h4>People work in this area:</h4>
       <div
         v-for="(area, areaid) of person.areas"
-        :key="'art-' + areaid"
+        :key="'per-' + areaid"
         class='title'
-        @click="goToArticle(`/area/${area.id}`)"
+        @click="goToPeople(`/area/${area.id}`)"
       >
         {{area.title}}
       </div>
-      <article>
-      <p class='articleMain'>
+      <people>
+      <p class='peopleMain'>
         {{ person.details }}
       </p>
-    </article>
+    </people>
     <img :src="person.image" :alt="person.overview" />
       <h4>Products worked by this person: </h4>
        <div
         v-for="(product, productid) of person.products"
         :key="'art-' + productid"
-        class='article'
-        @click="goToArticle(`/product/${product.id}`)"
+        class='people'
+        @click="goToPeople(`/product/${product.id}`)"
       >
         {{product.title}}
       </div>
@@ -36,8 +36,8 @@
       <div
         v-for="(service, serviceid) of person.services"
         :key="'art-' + serviceid"
-        class='article'
-        @click="goToArticle(`/service/${service.id}`)"
+        class='people'
+        @click="goToPeople(`/service/${service.id}`)"
       >
         {{service.title}}
       </div>
@@ -47,10 +47,8 @@
   </section>
 </template>
 <script>
-import ArticleMini from '~/components/people/ArticleMini.vue'
 export default {
   components: {
-    ArticleMini,
   },
   async asyncData({ $axios, route }) {
     const { id } = route.params
@@ -64,7 +62,7 @@ export default {
     }
   },
   methods: {
-    goToArticle(path) {
+    goToPeople(path) {
       this.$router.push({ path })
     },
   },
@@ -131,14 +129,14 @@ p {
   margin-bottom: 20px;
 }
 
-.articleMain{
+.peopleMain{
   color: black;
   font-size: 18px;
   text-align: middle;
   margin-top: 20px;
   margin-bottom: 20px;
 }
-.article {
+.people {
   cursor: pointer;
   font-size: 20px;
   text-align: middle;
