@@ -896,7 +896,7 @@ async function insertFakeData() {
   const Plotting  =  await SubArea.create({
     title:'Plotting',
     image:'/subarea/graphic1.png',
-    details:'We have a graphical data analysis and plotting package for scientists and engineers.  Designed to meet the requirements of serious researchers unafraid of command line oriented programs. Our collaborators and friends have convinced our platform is very useful.',
+    details:'We have a graphical data analysis and plotting package for scientists and engineers.  Designed to meet the requirements of serious researchers unafraid of command line oriented programs. ',
   })
   await Graphics.addSubArea (Plotting);
 

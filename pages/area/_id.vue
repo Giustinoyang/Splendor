@@ -138,6 +138,7 @@ h4{
 }
 .subcard {
   max-width: 40%;
+  height: 300px;
   display: inline-block;
   margin-left: 3%;
   margin-right: 3%;
