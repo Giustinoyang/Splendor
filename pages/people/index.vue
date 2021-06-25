@@ -1,7 +1,7 @@
 <template>
   <main class="container">
     <div>
-      <h1>People in Our company</h1>
+      <h1>PEOPLE IN OUR COMPANY</h1>
       <section class="positionH">
         <div
           v-for="(position, positionid) of position"

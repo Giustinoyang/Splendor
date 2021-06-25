@@ -7,7 +7,7 @@
        <a class='top' @click="goToArticle(`/service/${service.id}`)">{{service.title}}</a>
       </div>
       <h1>{{ service.title }}</h1>
-      <h4>{{ service.overview }}</h4>
+      <h3>{{ service.overview }}</h3>
       <article>
       <p class='articleMain'>
         {{ service.details }}
@@ -17,14 +17,14 @@
       </p>
     </article>
     <img :src="service.image" :alt="service.overview" />
-    <p>Service belongs to this area: </p>
+    <h4>Service belongs to this area: </h4>
       <div
         class='title'
         @click="goToArticle(`/area/${service.area.id}`)"
       >
         {{service.area.title}}
       </div>
-      <p>People who work for this service: </p>
+      <h4>People who work for this service: </h4>
       <div
         v-for="(people, peopleid) of service.people"
         :key="'art-' + peopleid"
@@ -65,20 +65,49 @@ export default {
 
 
 <style scoped>
-h4 {
-  margin: 30px 0;
+h1 {
+  font-size: 50px;
+  font-weight: bolder;
+  font-family: "Lucida Handwriting", "Lucida Console","Courier New", monospace;
 }
-.comments {
-  margin-top: 60px;
+h3 {
+  margin: 30px 0;
+  font-size: 20px;
+  font-weight: bolder;
+}
+h4{
+  font-size: 25px;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  color:#3567C5;
   text-align: left;
 }
 .article {
   cursor: pointer;
-  font-size: 18px;
+  font-size: 20px;
   text-align: middle;
   margin-top: 20px;
   margin-bottom: 20px;
+  font-family: serif;
+  font-weight: bolder;
+  text-decoration:underline;
 }
+
+.title{
+  cursor: pointer;
+  font-size: 20px;
+  text-align: middle;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  font-family: serif;
+  font-weight: bolder;
+  text-decoration:underline;
+  }
+.comments {
+  margin-top: 60px;
+  text-align: left;
+}
+
 .articleMain{
   color: black;
   font-size: 18px;
@@ -103,16 +132,6 @@ h4 {
   margin-top: 20px;
   margin-bottom: 20px;
 }
-.title{
-  cursor: pointer;
-  font-size: 20px;
-  text-align: middle;
-  margin-top: 20px;
-  margin-bottom: 20px;
-  font-family: serif;
-  font-weight: bolder;
-  text-decoration:underline;
-  }
 .comment {
   padding: 20px;
   background: #f7f7f7;

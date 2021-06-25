@@ -30,6 +30,7 @@ export default {
   color: white;
   margin-top: 80px;
   margin-bottom: 60px;
+  text-decoration:underline;
   }
 
 .card2 {

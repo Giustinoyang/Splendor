@@ -7,8 +7,8 @@
        <a class='top' @click="goToArticle(`/people/${person.id}`)">{{person.name}}</a>
       </div>
       <h1>{{ person.name }}</h1>
-      <h4>{{ person.overview }}</h4>
-      <p>People work in this area:</p>
+      <h3>{{ person.overview }}</h3>
+      <h4>People work in this area:</h4>
       <div
         v-for="(area, areaid) of person.areas"
         :key="'art-' + areaid"
@@ -23,7 +23,7 @@
       </p>
     </article>
     <img :src="person.image" :alt="person.overview" />
-      <p>Products worked by this person: </p>
+      <h4>Products worked by this person: </h4>
        <div
         v-for="(product, productid) of person.products"
         :key="'art-' + productid"
@@ -32,7 +32,7 @@
       >
         {{product.title}}
       </div>
-       <p>Services worked by this person: </p>
+       <h4>Services worked by this person: </h4>
       <div
         v-for="(service, serviceid) of person.services"
         :key="'art-' + serviceid"
@@ -72,9 +72,22 @@ export default {
 </script>
 
 <style scoped>
-h4 {
+h1 {
+  font-size: 50px;
+  font-weight: bolder;
+  font-family: "Lucida Handwriting", "Lucida Console","Courier New", monospace;
+}
+h3 {
   margin: 30px 0;
   font-size: 20px;
+  font-weight: bolder;
+}
+h4{
+  font-size: 25px;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  color:#3567C5;
+  text-align: left;
 }
 .comments {
   margin-top: 60px;
@@ -98,6 +111,7 @@ p {
   margin-top: 40px;
   white-space: pre-wrap;
   font-size: 20px;
+  line-height: 150%;
 }
 .top {
   cursor: pointer;
@@ -116,13 +130,7 @@ p {
   margin-top: 20px;
   margin-bottom: 20px;
 }
-.article {
-  cursor: pointer;
-  font-size: 18px;
-  text-align: middle;
-  margin-top: 20px;
-  margin-bottom: 20px;
-}
+
 .articleMain{
   color: black;
   font-size: 18px;
@@ -130,6 +138,17 @@ p {
   margin-top: 20px;
   margin-bottom: 20px;
 }
+.article {
+  cursor: pointer;
+  font-size: 20px;
+  text-align: middle;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  font-family: serif;
+  font-weight: bolder;
+  text-decoration:underline;
+}
+
 .title{
   cursor: pointer;
   font-size: 20px;

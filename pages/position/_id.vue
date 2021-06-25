@@ -79,6 +79,7 @@ export default {
 </script>
 
 <style scoped>
+
 h2 {
   margin-bottom: 30px;
 }
@@ -102,6 +103,7 @@ h2 {
 }
 .posList {
   cursor: pointer;
+  font-size: 18px;
 }
 .ad img {
   width: 100%;

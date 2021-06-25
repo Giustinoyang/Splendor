@@ -1,7 +1,7 @@
 <template>
   <main class="container">
     <header>
-      <h1>Contact</h1>
+      <h1>CONTACT</h1>
       <h4>And it's a wonderful company for you</h4>
     </header>
     <section>

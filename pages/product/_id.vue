@@ -7,14 +7,14 @@
        <a class='top' @click="goToArticle(`/product/${product.id}`)">{{product.title}}</a>
       </div>
       <h1>{{ product.title }}</h1>
-      <h4>{{ product.overview }}</h4>
+      <h3>{{ product.overview }}</h3>
       <article>
       <p class='articleMain'>
         {{ product.details }}
       </p>
     </article>
        <img :src="product.image" />
-      <p>Product belongs to this area: </p>
+      <h4>Product belongs to this area: </h4>
       
       <div
         class='title'
@@ -22,7 +22,7 @@
       >
         {{product.area.title}}
       </div>
-      <p>People who work for this product: </p>
+      <h4>People who work for this product: </h4>
       <div
         v-for="(people, peopleid) of product.people"
         :key="'art-' + peopleid"
@@ -62,11 +62,21 @@ export default {
 </script>
 
 <style scoped>
-h4 {
-  margin: 30px 0;
+h1 {
+  font-size: 50px;
+  font-weight: bolder;
+  font-family: "Lucida Handwriting", "Lucida Console","Courier New", monospace;
 }
-.comments {
-  margin-top: 60px;
+h3 {
+  margin: 30px 0;
+  font-size: 20px;
+  font-weight: bolder;
+}
+h4{
+  font-size: 25px;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  color:#3567C5;
   text-align: left;
 }
 .comment {
@@ -103,13 +113,6 @@ p {
   margin-top: 20px;
   margin-bottom: 20px;
 }
-.article {
-  cursor: pointer;
-  font-size: 18px;
-  text-align: middle;
-  margin-top: 20px;
-  margin-bottom: 20px;
-}
 .articleMain{
   color: black;
   font-size: 18px;
@@ -117,6 +120,17 @@ p {
   margin-top: 20px;
   margin-bottom: 20px;
 }
+.article {
+  cursor: pointer;
+  font-size: 20px;
+  text-align: middle;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  font-family: serif;
+  font-weight: bolder;
+  text-decoration:underline;
+}
+
 .title{
   cursor: pointer;
   font-size: 20px;

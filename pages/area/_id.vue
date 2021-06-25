@@ -7,7 +7,7 @@
        <a class='top' @click="goToArticle(`/area/${area.id}`)">{{area.title}}</a>
       </div>
       <h1>{{ area.title }}</h1>
-      <h4>{{ area.overview }}</h4>     
+      <h3>{{ area.overview }}</h3>     
       
       <img :src="area.image" :alt="area.overview" />
       <p class='articleMain'>
@@ -26,7 +26,7 @@
       </div>
     </header>
     <article>
-      <p>People who work in this area: </p>
+      <h4>People who work in this area: </h4>
       <div
         v-for="(person, personid) of area.people"
         :key="'art-' + personid"
@@ -36,7 +36,7 @@
           {{person.name}}
       </div>
       
-      <p>Products belong to this area: </p>
+      <h4>Products belong to this area: </h4>
       <div
         v-for="(product, productid) of area.products"
         :key="'art-' + productid"
@@ -45,7 +45,7 @@
         >
           {{product.title}}
       </div>
-       <p>Services belong to this area: </p>
+       <h4>Services belong to this area: </h4>
       <div
         v-for="(service, serviceid) of area.services"
         :key="'art-' + serviceid"
@@ -86,10 +86,44 @@ export default {
 </script>
 
 <style scoped>
-h4 {
-  margin: 30px 0;
-  font-size: 18px;
+h1 {
+  font-size: 50px;
+  font-weight: bolder;
+  font-family: "Lucida Handwriting", "Lucida Console","Courier New", monospace;
 }
+h3 {
+  margin: 30px 0;
+  font-size: 20px;
+  font-weight: bolder;
+}
+h4{
+  font-size: 25px;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  color:#3567C5;
+  text-align: left;
+}
+.article {
+  cursor: pointer;
+  font-size: 20px;
+  text-align: middle;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  font-family: serif;
+  font-weight: bolder;
+  text-decoration:underline;
+}
+
+.title{
+  cursor: pointer;
+  font-size: 20px;
+  text-align: middle;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  font-family: serif;
+  font-weight: bolder;
+  text-decoration:underline;
+  }
 .container {
   width: 100%
 }
@@ -172,14 +206,5 @@ p {
   margin-top: 20px;
   margin-bottom: 20px;
 }
-.title{
-  cursor: pointer;
-  font-size: 20px;
-  text-align: middle;
-  margin-top: 20px;
-  margin-bottom: 20px;
-  font-family: serif;
-  font-weight: bolder;
-  text-decoration:underline;
-  }
+
 </style>

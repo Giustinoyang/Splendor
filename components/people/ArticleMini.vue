@@ -29,6 +29,14 @@ export default {
   width: 30%;
   height: 180px;
 }
+h3{
+  font-size: 25px;
+  text-decoration:underline;
+}
+h4{
+  font-size: 20px;
+  font-weight: bolder;
+}
 .card2 {
   padding: 20px 10px;
   border: 1px solid grey;
@@ -36,6 +44,7 @@ export default {
   float: right;
   width: 60%;
   height: 180px;
+  
 }
 p {
   text-align: center;
