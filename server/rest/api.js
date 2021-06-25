@@ -74,8 +74,6 @@ async function init() {
   })
 }
 
-app.listen(process.env.PORT || 3000)
-
 init()
 
 export default app
