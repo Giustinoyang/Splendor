@@ -1,16 +1,16 @@
 const { Sequelize, DataTypes } = require('sequelize')
 
 // Development
-const db = new Sequelize(
-  'postgres://postgres:950423@127.0.0.1:5432/postgres'
-)
+//const db = new Sequelize(
+//  'postgres://postgres:950423@127.0.0.1:5432/postgres'
+//)
 // Production
-//const pg = require('pg')
-//pg.defaults.ssl = true
-//const db = new Sequelize(process.env.DATABASE_URL, {
-//  ssl: true,
- // dialectOptions: { ssl: { require: true, rejectUnauthorized: false } },
-//})
+const pg = require('pg')
+pg.defaults.ssl = true
+const db = new Sequelize(process.env.DATABASE_URL, {
+  ssl: true,
+ dialectOptions: { ssl: { require: true, rejectUnauthorized: false } },
+})
 
 /**
  * Function to define the structure of the database
