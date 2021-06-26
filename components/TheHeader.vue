@@ -86,7 +86,7 @@ export default {
 .menu-item {
   display: flex;
   text-align: center;
-  font-size: 100%;
+  font-size: 120%;
   font-weight:bolder;
 }
 .first {
