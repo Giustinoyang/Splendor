@@ -63,39 +63,35 @@ h1 {
 .box1{
   max-width:35%;
   text-align: left;
-  height: 250px;
+  height: auto;
   float: left;
   margin-top: 40px;
   margin-bottom: 70px;
-  overflow: hidden;
 }
 .box2{
   max-width:55%;
   text-align: right;
-  height: 300px;
+  height: auto;
   float: right;
   margin-top: 30px;
   margin-bottom: 30px;
-  overflow: hidden;
 }
 
 .box3{
   max-width:35%;
   text-align: right;
-  height: 250px;
+  height: auto;
   float: right;
   margin-top: 40px;
   margin-bottom: 70px;
-  overflow: hidden;
 }
 .box4{
   max-width:55%;
   text-align: left;
-  height: 300px;
+  height: auto;
   float: left;
   margin-top: 30px;
   margin-bottom: 30px;
-  overflow: hidden;
 }
 h2 {
   margin-top: 40px;
