@@ -73,8 +73,8 @@ h1 {
   text-align: right;
   height: 300px;
   float: right;
-  margin-top: 30px;
-  margin-bottom: 30px;
+  margin-top: 100px;
+  margin-bottom: 100px;
 }
 
 .box3{
@@ -82,16 +82,16 @@ h1 {
   text-align: right;
   height: 250px;
   float: right;
-  margin-top: 40px;
-  margin-bottom: 70px;
+  margin-top: 100px;
+  margin-bottom: 100px;
 }
 .box4{
   max-width:55%;
   text-align: left;
   height: 300px;
   float: left;
-  margin-top: 30px;
-  margin-bottom: 30px;
+  margin-top: 100px;
+  margin-bottom: 100px;
 }
 h2 {
   margin-top: 40px;
