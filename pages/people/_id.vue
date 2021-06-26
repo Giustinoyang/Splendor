@@ -107,7 +107,7 @@ img {
 p {
   text-align: left;
   margin-top: 40px;
-  white-space: pre-wrap;
+  white-space: normal;
   font-size: 20px;
   line-height: 150%;
 }
