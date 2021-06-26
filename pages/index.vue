@@ -64,6 +64,7 @@ h1 {
   max-width:35%;
   text-align: left;
   height: auto;
+  max-height:  250;
   float: left;
   margin-top: 40px;
   margin-bottom: 70px;
@@ -72,6 +73,7 @@ h1 {
   max-width:55%;
   text-align: right;
   height: auto;
+  max-height: 300px;
   float: right;
   margin-top: 30px;
   margin-bottom: 30px;
@@ -81,6 +83,7 @@ h1 {
   max-width:35%;
   text-align: right;
   height: auto;
+  max-height: 250px;
   float: right;
   margin-top: 40px;
   margin-bottom: 70px;
@@ -89,6 +92,7 @@ h1 {
   max-width:55%;
   text-align: left;
   height: auto;
+  max-height: 300;
   float: left;
   margin-top: 30px;
   margin-bottom: 30px;
