@@ -1,9 +1,9 @@
 const { Sequelize, DataTypes } = require('sequelize')
 
 // Development
-//const db = new Sequelize(
-//  'postgres://postgres:950423@127.0.0.1:5432/postgres'
-//)
+/*const db = new Sequelize(
+  'postgres://postgres:950423@127.0.0.1:5432/postgres'
+)*/
 // Production
 const pg = require('pg')
 pg.defaults.ssl = true

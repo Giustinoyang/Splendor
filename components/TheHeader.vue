@@ -10,7 +10,7 @@
           @click="goToTag(title.path)"
         >
           <a class = "button">{{ title.name }}</a>
-          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          &nbsp;|&nbsp;
         </div>
       </nav>
     </div>
@@ -22,7 +22,6 @@ export default {
   data() {
     return {
       menuOptions: [
-        
       ],
       titleOptions: [
         {
@@ -70,7 +69,6 @@ export default {
   background: black;
   color: white;
   display: flex;
-  justify-content: space-between;
   line-height: 200%;
   position: fixed;
   width: 100%;
@@ -79,7 +77,6 @@ export default {
 }
 .button {
   cursor: pointer;
-  font-size: 2%;
 }
 .header-content {
   width: 100%;
@@ -89,17 +86,18 @@ export default {
 .menu-item {
   display: flex;
   text-align: center;
-  font-size: 20px;
+  font-size: 100%;
   font-weight:bolder;
 }
 .first {
   display: flex;
-  align-items: flex-start;
+  align-items:center;
+  width: 800px;
 }
 img {
   width: auto;
   height: auto;
-  max-width: 3%;
-  max-height:3%;
+  max-width: 2.5%;
+  max-height:2.5%;
 }
 </style>
