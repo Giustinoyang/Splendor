@@ -100,4 +100,9 @@ img {
   max-width: 2.5%;
   max-height:2.5%;
 }
+@media screen and (max-width: 600px) {
+  .menu-item{
+    font-size: 80%;
+  }
+}
 </style>
