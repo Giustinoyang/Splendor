@@ -72,7 +72,11 @@ export default {
 </script>
 
 <style scoped>
-
+h1 {
+  font-size: 50px;
+  font-weight: bolder;
+  font-family: "Lucida Handwriting", "Lucida Console","Courier New", monospace;
+}
 h2 {
   margin-bottom: 30px;
 }
@@ -96,6 +100,6 @@ h2 {
 }
 .posList {
   cursor: pointer;
-  font-size: 18px;
+  font-size: 25px;
 }
 </style>
