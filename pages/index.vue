@@ -63,8 +63,7 @@ h1 {
 .box1{
   max-width:35%;
   text-align: left;
-  height: auto;
-  max-height:  250;
+  height: 250px;
   float: left;
   margin-top: 40px;
   margin-bottom: 70px;
@@ -72,8 +71,7 @@ h1 {
 .box2{
   max-width:55%;
   text-align: right;
-  height: auto;
-  max-height: 300px;
+  height: 300px;
   float: right;
   margin-top: 30px;
   margin-bottom: 30px;
@@ -82,8 +80,7 @@ h1 {
 .box3{
   max-width:35%;
   text-align: right;
-  height: auto;
-  max-height: 250px;
+  height: 250px;
   float: right;
   margin-top: 40px;
   margin-bottom: 70px;
@@ -91,8 +88,7 @@ h1 {
 .box4{
   max-width:55%;
   text-align: left;
-  height: auto;
-  max-height: 300;
+  height: 300px;
   float: left;
   margin-top: 30px;
   margin-bottom: 30px;
