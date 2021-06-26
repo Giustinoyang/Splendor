@@ -67,6 +67,7 @@ h1 {
   float: left;
   margin-top: 40px;
   margin-bottom: 70px;
+  overflow: hidden;
 }
 .box2{
   max-width:55%;
@@ -75,6 +76,7 @@ h1 {
   float: right;
   margin-top: 30px;
   margin-bottom: 30px;
+  overflow: hidden;
 }
 
 .box3{
@@ -84,6 +86,7 @@ h1 {
   float: right;
   margin-top: 40px;
   margin-bottom: 70px;
+  overflow: hidden;
 }
 .box4{
   max-width:55%;
@@ -92,6 +95,7 @@ h1 {
   float: left;
   margin-top: 30px;
   margin-bottom: 30px;
+  overflow: hidden;
 }
 h2 {
   margin-top: 40px;
