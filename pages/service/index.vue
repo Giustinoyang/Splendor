@@ -2,7 +2,7 @@
   <main class="container">
     <header>
       <h1>SERVICE</h1>
-      <h4>And it's made with Nuxt</h4>
+      <h4>Our best</h4>
     </header>
     <section class="service-grid">
       <div

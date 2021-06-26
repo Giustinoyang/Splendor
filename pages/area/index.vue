@@ -2,7 +2,7 @@
   <main class="container">
     <header>
       <h1>AREA</h1>
-      <h4>And it's made with Nuxt</h4>
+      <h4>Where we focus on</h4>
     </header>
     <section class="area-grid">
       <div

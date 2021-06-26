@@ -1,4 +1,4 @@
-##Group name : Splendor.
+## Group name : Splendor.
 Mengyao Li 10574773 10574773@mail.polimi.it
 Zongshuai Yang 10574824 10574824@mail.polimi.it
 
@@ -30,7 +30,7 @@ $ npm run generate
 For detailed explanation on how things work, check out [Nuxt.js docs](https://nuxtjs.org).
 
 
-##Background about the website
+## Background about the website
 
 Splendor is a multinational consulting and software company. This company focuses on six area: artificial intellegence, computer graphics,
 network, robotics, computer security and bigdata. 

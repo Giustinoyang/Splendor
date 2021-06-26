@@ -57,7 +57,6 @@ function defineDatabaseStructure() {
       title: DataTypes.STRING,
       overview: DataTypes.TEXT,
       image: DataTypes.STRING,
-      preview: DataTypes.STRING,
       details: DataTypes.TEXT,
     },
     {
