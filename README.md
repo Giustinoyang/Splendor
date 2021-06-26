@@ -1,4 +1,11 @@
-# Nuxt Website
+##Group name : Splendor.
+Mengyao Li 10574773 10574773@mail.polimi.it
+Zongshuai Yang 10574824 10574824@mail.polimi.it
+
+Mengyao Li: Server side, Database and Api, debugging.
+Zongshuai Yang: Client side and framework, debugging.
+
+
 
 ## Install
 This website is build by Next.
@@ -64,19 +71,19 @@ area&services.
 
 3. There are 2 kind of webpage in Service folder. They both are dynamic webpage.
 `service/index.vue` shows the list of service. Totally 8 services. Including the name of the services and the overview of the services. If you 
-click either the services name or the services overview, the webpage will jump to service/id.vue.
+click either the services name or the services overview, the webpage will jump to `service/id.vue`.
 `service/id.vue` shows the overview and detail introduction of the services. At the bottom of the services, there are the 'Service belongs to this 
 area, People who work for this service. These shows the relationship between area&service, people&service.
 
 4.There are 2 kind of webpage in Product folder. They both are dynamic webpage.
 `product/index.vue` shows the list of product. Totally 23 products. Including the name of the products and the overview of the products. If you 
-click either the products name or the products overview, the webpage will jump to product/id.vue.
+click either the products name or the products overview, the webpage will jump to `product/id.vue`.
 `product/id.vue` shows the overview and detail introduction of the products. At the bottom of the products, there are the 'Product belongs to this 
 area, People who work for this products. These shows the relationship between area&product, people&product.
 
 5.There are 2 kind of webpage in People folder. They both are dynamic webpage. And they connected with
 `people/index.vue` shows the list of people. Totally 21 people. Including the name of the people, photo, position and the overview of the people. 
-If you click either the photo or the people overview, the webpage will jump to people/id.vue. And you can click the position line under the title,
+If you click either the photo or the people overview, the webpage will jump to `people/id.vue`. And you can click the position line under the title,
 in order to devide the people into different position.
 
 We connected people webpage to position/id.vue. We do filter link to `position/{{id}}`. This page use the same way show the list filter 
@@ -92,10 +99,26 @@ people&product and people&services.
 
 7.Contact.vue is a static webpage, which shows the contact number and email of the company.
 
+## Component
 
-
-In `components`folder, `TheHeader` and `TheBottom` is the header and foot in all page by setting in `layouts/default.vue`.
+1. In `components`folder, `TheHeader` and `TheBottom` is the header and foot in all page by setting in `layouts/default.vue`.
 `TheHeader` has a a fixed position, so that we can roll the page and the header remains on top.
 
+2.In `components`folder, there has a listCard folder which include `normalCard.vue` and `peopleCard.vue`. We use them to construct the 
+`area/indedx.vue`, `service/index.vue`, `product/index.vue` and `people/index.vue`. So that we can shows the name and the overview in a proper 
+structure.
+
+## Server and DB
+We use the NodeJS with Express to construct the server part. 
+Node is an open-source, cross-platform runtime environment that allows developers to create all kinds of server-side tools and applications in 
+JavaScript. The runtime is intended for use outside of a  browser context (i.e. running directly on a computer or server OS). As such, the 
+environment omits browser-specific JavaScript APIs and adds support for more traditional OS APIs including HTTP and file system libraries.
+
+Express is the most popular Node web framework, and is the underlying library for a number of other popular Node web frameworks. It provides 
+mechanisms to:
+Write handlers for requests with different HTTP verbs at different URL paths (routes).
+Integrate with "view" rendering engines in order to generate responses by inserting data into templates.
+Set common web application settings like the port to use for connecting, and the location of templates that are used for rendering the response.
+Add additional request processing "middleware" at any point within the request handling pipeline.
 
 
