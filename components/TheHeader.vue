@@ -69,29 +69,17 @@ export default {
   height: 70px;
   background: black;
   color: white;
-  /*display: flex;*/
-  /*justify-content: space-between;*/
+  display: flex;
+  justify-content: space-between;
   line-height: 200%;
   position: fixed;
   width: 100%;
   top: 0;
   z-index: 10;
-
-  list-style-type: none;
-  display:-webkit-box;
-  display:-webkit-flex;
-  display:-ms-flexbox;
-  display:flex;
-  -webkit-flex-wrap:nowrap;
-  -ms-flex-wrap:nowrap;
-  flex-wrap:nowrap;
-  -webkit-box-pack:justify;
-  -webkit-justify-content:space-between;
-  -ms-flex-pack:justify;
-  justify-content:space-between;
 }
 .button {
   cursor: pointer;
+  font-size: 2%;
 }
 .header-content {
   width: 100%;
