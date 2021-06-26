@@ -1,8 +1,10 @@
 ## Group name : Splendor.
 Mengyao Li 10574773 10574773@mail.polimi.it
+
 Zongshuai Yang 10574824 10574824@mail.polimi.it
 
 Mengyao Li: Server side, Database and Api, debugging.
+
 Zongshuai Yang: Client side and framework, debugging.
 
 
