@@ -87,6 +87,7 @@ h2 {
 }
 .posList {
   cursor: pointer;
+  font-size: 25px;
 }
 .people {
   cursor: pointer;
