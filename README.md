@@ -7,7 +7,7 @@ Mengyao Li: Server side, Database and Api, debugging.
 
 Zongshuai Yang: Client side and framework, debugging.
 
-
+https://splendor-yang-li.herokuapp.com/
 
 ## Install
 This website is build by Next.
